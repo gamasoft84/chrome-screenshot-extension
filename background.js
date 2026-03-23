@@ -1,5 +1,42 @@
 // background.js - Service Worker
 
+let tramitesPromise = null;
+
+function getTramitesLiberados() {
+  if (!tramitesPromise) {
+    const jsonUrl = chrome.runtime.getURL('data/tramites_liberados.json');
+    tramitesPromise = fetch(jsonUrl).then((r) => r.json());
+  }
+  return tramitesPromise;
+}
+
+/** Misma URL lógica que en JSON: origen + pathname, sin hash, sin / final. */
+function normalizeUrlForTramiteMatch(urlString) {
+  try {
+    const u = new URL(urlString);
+    let path = u.pathname;
+    if (path.length > 1 && path.endsWith('/')) path = path.slice(0, -1);
+    return `${u.origin}${path}`.toLowerCase();
+  } catch {
+    return '';
+  }
+}
+
+function findTramiteForUrl(pageUrl, tramites) {
+  const key = normalizeUrlForTramiteMatch(pageUrl);
+  for (const t of tramites) {
+    if (normalizeUrlForTramiteMatch(t.URL) === key) return t;
+  }
+  return null;
+}
+
+function safeFilenameSegment(value) {
+  return String(value)
+    .replace(/[^a-z0-9._-]/gi, '_')
+    .replace(/_+/g, '_')
+    .replace(/^_|_$/g, '');
+}
+
 // Escuchar mensajes del popup
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === 'capture') {
@@ -35,8 +72,21 @@ async function handleCapture(tabId, pageUrl, sendResponse) {
   }
 }
 
-// Generar nombre de archivo: dominio_ruta_001.png
+// Generar nombre de archivo: [departamento_idtipo_]dominio_ruta_001.png
 async function generateFilename(pageUrl) {
+  const tramites = await getTramitesLiberados();
+  const tramiteMatch = findTramiteForUrl(pageUrl, tramites);
+
+  let departamento = null;
+  let idTipoTramite = null;
+  let prefix = '';
+
+  if (tramiteMatch) {
+    departamento = tramiteMatch.departmento;
+    idTipoTramite = tramiteMatch.id_tipo_tramite;
+    prefix = `${safeFilenameSegment(departamento)}_${safeFilenameSegment(idTipoTramite)}_`;
+  }
+
   // Crear clave limpia desde la URL
   const urlKey = urlToStorageKey(pageUrl);
 
@@ -50,12 +100,16 @@ async function generateFilename(pageUrl) {
 
   // Nombre legible desde la URL
   const readableName = urlToReadableName(pageUrl);
+  const filename = `${prefix}${readableName}_${consecutive}.png`;
   console.log('readableName', readableName);
-  console.log('consecutive', consecutive);  
-  console.log('filename', `${readableName}_${consecutive}.png`);    
-  console.log('BY GAMASOFT');  
-  console.log('--------------------------------');  
-  return `${readableName}_${consecutive}.png`;
+  console.log('consecutive', consecutive);
+  if (departamento != null) {
+    console.log('tramite departamento', departamento, 'id_tipo_tramite', idTipoTramite);
+  }
+  console.log('filename', filename);
+  console.log('BY GAMASOFT');
+  console.log('--------------------------------');
+  return filename;
 }
 
 // Convertir URL a nombre de archivo legible
