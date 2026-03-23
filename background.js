@@ -306,9 +306,11 @@ function safeFilenameSegment(value) {
 function normalizeUrlForTramiteMatch(urlString) {
   try {
     const u = new URL(urlString);
+    // Match por "path" únicamente (sin dominio/origin).
+    // Quitamos slash final para evitar falsos negativos.
     let path = u.pathname;
     if (path.length > 1 && path.endsWith('/')) path = path.slice(0, -1);
-    return `${u.origin}${path}`.toLowerCase();
+    return path.toLowerCase();
   } catch {
     return '';
   }
@@ -317,11 +319,7 @@ function normalizeUrlForTramiteMatch(urlString) {
 function findTramiteForUrl(pageUrl, tramites) {
   if (!Array.isArray(tramites) || !pageUrl) return null;
 
-  // 1) Coincidencia exacta tal cual viene en el JSON.
-  const direct = tramites.find((t) => t && t.URL === pageUrl);
-  if (direct) return direct;
-
-  // 2) Fallback: misma origin+pathname (sin hash, sin barra final).
+  // Coincidencia por "path" únicamente (sin dominio).
   const key = normalizeUrlForTramiteMatch(pageUrl);
   return tramites.find((t) => normalizeUrlForTramiteMatch(t.URL) === key) || null;
 }
