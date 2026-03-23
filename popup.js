@@ -5,6 +5,14 @@ let autoInterval = null;
 let isAuto = false;
 let captureMode = 'full'; // 'full' | 'visible'
 
+function queryActiveTab() {
+  return new Promise((resolve) => {
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+      resolve(tabs?.[0] || null);
+    });
+  });
+}
+
 // Obtener pestaña activa al abrir el popup
 chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
   if (tabs[0]) {
@@ -65,13 +73,16 @@ function updateModeButtons() {
 
 // Selección de región
 document.getElementById('btnRegion').addEventListener('click', () => {
-  if (!currentTab) return;
-  // Enviar mensaje al background para iniciar selector
-  chrome.runtime.sendMessage({
-    action: 'startRegionCapture',
-    tabId:    currentTab.id,
-    windowId: currentTab.windowId,
-    url:      currentTab.url
+  queryActiveTab().then((tab) => {
+    if (!tab) return;
+    currentTab = tab;
+    // Enviar mensaje al background para iniciar selector
+    chrome.runtime.sendMessage({
+      action: 'startRegionCapture',
+      tabId:    tab.id,
+      windowId: tab.windowId,
+      url:      tab.url
+    });
   });
   // Escuchar resultado via storage session
   chrome.storage.session.onChanged.addListener(function onCapture(changes) {
@@ -129,8 +140,10 @@ document.getElementById('btnClear').addEventListener('click', () => {
 });
 
 // Función principal de captura
-function captureScreen(isAutoCapture = false) {
-  if (!currentTab) return;
+async function captureScreen(isAutoCapture = false) {
+  const tab = await queryActiveTab();
+  if (!tab) return;
+  currentTab = tab;
 
   const btn = document.getElementById('btnCapture');
   if (!isAutoCapture) {
@@ -139,7 +152,7 @@ function captureScreen(isAutoCapture = false) {
   }
 
   chrome.runtime.sendMessage(
-    { action: 'capture', tabId: currentTab.id, windowId: currentTab.windowId, url: currentTab.url, mode: captureMode },
+    { action: 'capture', tabId: tab.id, windowId: tab.windowId, url: tab.url, mode: captureMode },
     (response) => {
       if (response && response.success) {
         updateCounters();
@@ -162,7 +175,8 @@ function captureScreen(isAutoCapture = false) {
 // Actualizar contadores desde storage
 function updateCounters() {
   chrome.storage.local.get(null, (data) => {
-    const urlKey = urlToKey(currentTab?.url || '');
+    const url = currentTab?.url || '';
+    const urlKey = urlToKey(url);
     const urlCount = data[urlKey] || 0;
     const total = Object.values(data)
       .filter(v => typeof v === 'number')

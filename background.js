@@ -286,14 +286,27 @@ function showPageToast(success, text) {
 }
 
 // ─── Helpers nombre de archivo ────────────────────────────────────────────────
-let tramitesLiberadosPromise = null;
+let tramitesLiberadosIndexPromise = null;
 
-function getTramitesLiberados() {
-  if (!tramitesLiberadosPromise) {
+// Índice O(1) para buscar por pathname normalizado (sin dominio).
+function getTramitesLiberadosIndex() {
+  if (!tramitesLiberadosIndexPromise) {
     const jsonUrl = chrome.runtime.getURL('data/tramites_liberados.json');
-    tramitesLiberadosPromise = fetch(jsonUrl).then((r) => r.json());
+    tramitesLiberadosIndexPromise = fetch(jsonUrl)
+      .then((r) => r.json())
+      .then((tramites) => {
+        const map = new Map();
+        for (const t of tramites || []) {
+          if (!t?.URL) continue;
+          const key = normalizeUrlForTramiteMatch(t.URL);
+          if (!key) continue;
+          // Si hay duplicados, el último gana.
+          map.set(key, t);
+        }
+        return map;
+      });
   }
-  return tramitesLiberadosPromise;
+  return tramitesLiberadosIndexPromise;
 }
 
 function safeFilenameSegment(value) {
@@ -333,8 +346,8 @@ async function generateFilename(pageUrl) {
   let folderPath = '';
   let filenamePrefix = '';
   try {
-    const tramites = await getTramitesLiberados();
-    const match = findTramiteForUrl(pageUrl, tramites);
+    const index = await getTramitesLiberadosIndex();
+    const match = index.get(normalizeUrlForTramiteMatch(pageUrl)) || null;
     if (match) {
       // En el JSON el campo se llama `departmento`.
       const departamento = match.departmento;
