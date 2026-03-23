@@ -286,12 +286,67 @@ function showPageToast(success, text) {
 }
 
 // ─── Helpers nombre de archivo ────────────────────────────────────────────────
+let tramitesLiberadosPromise = null;
+
+function getTramitesLiberados() {
+  if (!tramitesLiberadosPromise) {
+    const jsonUrl = chrome.runtime.getURL('data/tramites_liberados.json');
+    tramitesLiberadosPromise = fetch(jsonUrl).then((r) => r.json());
+  }
+  return tramitesLiberadosPromise;
+}
+
+function safeFilenameSegment(value) {
+  return String(value)
+    .replace(/[^a-z0-9._-]/gi, '_')
+    .replace(/_+/g, '_')
+    .replace(/^_|_$/g, '');
+}
+
+function normalizeUrlForTramiteMatch(urlString) {
+  try {
+    const u = new URL(urlString);
+    let path = u.pathname;
+    if (path.length > 1 && path.endsWith('/')) path = path.slice(0, -1);
+    return `${u.origin}${path}`.toLowerCase();
+  } catch {
+    return '';
+  }
+}
+
+function findTramiteForUrl(pageUrl, tramites) {
+  if (!Array.isArray(tramites) || !pageUrl) return null;
+
+  // 1) Coincidencia exacta tal cual viene en el JSON.
+  const direct = tramites.find((t) => t && t.URL === pageUrl);
+  if (direct) return direct;
+
+  // 2) Fallback: misma origin+pathname (sin hash, sin barra final).
+  const key = normalizeUrlForTramiteMatch(pageUrl);
+  return tramites.find((t) => normalizeUrlForTramiteMatch(t.URL) === key) || null;
+}
+
 async function generateFilename(pageUrl) {
   const key   = urlToStorageKey(pageUrl);
   const data  = await chrome.storage.local.get(key);
   const count = (data[key] || 0) + 1;
   await chrome.storage.local.set({ [key]: count });
-  return `${urlToReadableName(pageUrl)}_${String(count).padStart(3,'0')}.png`;
+
+  let prefix = '';
+  try {
+    const tramites = await getTramitesLiberados();
+    const match = findTramiteForUrl(pageUrl, tramites);
+    if (match) {
+      // En el JSON el campo se llama `departmento`.
+      const departamento = match.departmento;
+      const idTipoTramite = match.id_tipo_tramite;
+      prefix = `${safeFilenameSegment(departamento)}_${safeFilenameSegment(idTipoTramite)}_`;
+    }
+  } catch (e) {
+    // Si falla la carga del JSON, seguimos con el naming tradicional.
+  }
+
+  return `${prefix}${urlToReadableName(pageUrl)}_${String(count).padStart(3,'0')}.png`;
 }
 
 function urlToReadableName(url) {
