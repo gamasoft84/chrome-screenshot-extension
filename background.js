@@ -162,8 +162,8 @@ async function captureFullPage(tabId, windowId) {
   // Cuantos tiles necesitamos
   const stepsY = Math.ceil(capH / viewportHeight);
 
-  // Registrar donde termino cada tile para el siguiente sepa desde donde pintar
-  let nextDrawY = 0; // proximo pixel del canvas donde dibujar
+  let nextDrawY  = 0;  // proximo pixel del canvas donde dibujar
+  let prevTargetY = 0;  // targetY del tile anterior para calcular delta
 
   for (let row = 0; row < stepsY; row++) {
     // Scroll exacto: tiles normales van de a viewportHeight, el ultimo al maximo posible
@@ -172,38 +172,44 @@ async function captureFullPage(tabId, windowId) {
       : Math.max(0, capH - viewportHeight);
 
     const actual = await sendToTab(tabId, { action: 'scrollTo', x: 0, y: targetY });
-    await sleep(100);
+    await sleep(150); // Dar tiempo al browser para repaint tras scroll
 
     // Captura limpia (sin overlay)
     await sendToTab(tabId, { action: 'setOverlayVisible', visible: false }).catch(() => {});
-    await sleep(50);
+    await sleep(60); // Frame extra para que display:none aplique
     const tileUrl = await captureVisibleTabThrottled(windowId);
     await sendToTab(tabId, { action: 'setOverlayVisible', visible: true }).catch(() => {});
 
     const img   = await dataUrlToImageBitmap(tileUrl);
-    const realY = Math.round((actual.actualY ?? targetY) * dpr);
+    const imgH  = img.height;
+    const imgW  = img.width;
 
     if (row === 0) {
-      // Primer tile: siempre completo desde y=0
-      ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, img.width, img.height);
-      nextDrawY = img.height;
+      // Primer tile completo
+      ctx.drawImage(img, 0, 0);
+      nextDrawY = imgH;
     } else {
-      // Para tiles intermedios/ultimo: los pixeles que el canvas necesita
-      // empiezan justo donde termino el tile anterior (nextDrawY).
-      // En la imagen capturada, esos pixeles estan al final.
-      const canvasRemaining = Math.round(capH * dpr) - nextDrawY;
-      const pixelsToDraw    = Math.min(img.height, canvasRemaining);
-      const srcY            = img.height - pixelsToDraw; // tomar desde el fondo de la imagen
+      const canvasH         = Math.round(capH * dpr);
+      const canvasRemaining = canvasH - nextDrawY;
+      if (canvasRemaining <= 0) { img.close(); break; }
 
-      if (pixelsToDraw > 0) {
+      // Cuantos px CSS scrolleo este tile vs el anterior
+      const scrollDelta   = targetY - prevTargetY;          // en CSS px
+      const newPixels     = Math.round(scrollDelta * dpr);  // en device px
+      // Esos pixeles nuevos estan al FONDO de la imagen capturada
+      const srcY          = imgH - newPixels;
+      const pixelsToDraw  = Math.min(newPixels, canvasRemaining);
+
+      if (pixelsToDraw > 0 && srcY >= 0) {
         ctx.drawImage(
           img,
-          0, srcY,       img.width, pixelsToDraw,  // src: franja inferior nueva
-          0, nextDrawY,  img.width, pixelsToDraw   // dst: continuacion exacta en canvas
+          0, srcY,      imgW, pixelsToDraw,
+          0, nextDrawY, imgW, pixelsToDraw
         );
         nextDrawY += pixelsToDraw;
       }
     }
+    prevTargetY = targetY;
     img.close();
 
     await sendToTab(tabId, {

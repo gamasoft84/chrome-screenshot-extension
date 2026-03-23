@@ -72,34 +72,45 @@
   function prepareCapture() {
     hiddenElements = [];
 
-    const all = Array.from(document.querySelectorAll('*'));
-
+    // Recorrer TODO el DOM y forzar static/relative directamente en style inline
+    // JS inline style siempre gana sobre cualquier CSS, incluso !important en hojas
+    const all = document.querySelectorAll('*');
     for (const el of all) {
-      if (el.id === '__ss_overlay__' || el.id === '__ss_urlbar__') continue;
+      if (el.id === '__ss_overlay__' || el.id === '__ss_urlbar__' ||
+          el.closest('#__ss_urlbar__')) continue;
 
-      const tag      = el.tagName.toLowerCase();
-      const computed = getComputedStyle(el);
-      const pos      = computed.position;
-      const display  = computed.display;
-      if (display === 'none') continue;
+      // Leer posicion computada real
+      const pos = getComputedStyle(el).position;
+      if (pos !== 'fixed' && pos !== 'sticky') continue;
+      if (getComputedStyle(el).display === 'none') continue;
 
-      // 1. Ocultar footers por tag semántico o clases/ids comunes
+      // Guardar estado original
+      hiddenElements.push({
+        el,
+        isStyleTag:      false,
+        originalPos:     el.style.getPropertyValue('position'),
+        originalPosPri:  el.style.getPropertyPriority('position'),
+        originalDisplay: el.style.getPropertyValue('display'),
+        originalDispPri: el.style.getPropertyPriority('display'),
+      });
+
+      // Footer o elemento que queremos ocultar del todo
+      const tag = el.tagName.toLowerCase();
       const isFooter = tag === 'footer'
-        || /\b(footer|pie|bottom-bar|site-footer|page-footer)\b/i.test(el.id + ' ' + el.className);
+        || /\b(footer|pie|bottom-bar|site-footer|page-footer)\b/i.test(
+            (el.id || '') + ' ' + (el.className || ''));
 
-      // 2. Ocultar todos los fixed y sticky (headers flotantes, cookie banners, chat widgets…)
-      const isFloating = (pos === 'fixed' || pos === 'sticky');
-
-      if (isFooter || isFloating) {
-        hiddenElements.push({ el, originalDisplay: el.style.display });
+      if (isFooter) {
         el.style.setProperty('display', 'none', 'important');
+      } else {
+        // Convertir fixed/sticky -> relative para que ocupe su lugar en el flujo
+        // sin flotar encima de otros tiles
+        el.style.setProperty('position', 'relative', 'important');
       }
     }
 
-    // 3. Inyectar banda de URL en la parte superior
     injectUrlBar();
 
-    // Devolver altura limpia del documento tras ocultar elementos
     return {
       cleanHeight: document.documentElement.scrollHeight,
       cleanWidth:  document.documentElement.scrollWidth,
@@ -107,18 +118,33 @@
     };
   }
 
-  function restoreCapture() {
-    // Restaurar elementos ocultos
-    for (const { el, originalDisplay } of hiddenElements) {
-      el.style.display = originalDisplay;
+    function restoreCapture() {
+    for (const item of hiddenElements) {
+      if (item.isStyleTag) {
+        item.el.remove();
+      } else {
+        // Restaurar position original
+        if (item.originalPos) {
+          item.el.style.setProperty('position', item.originalPos, item.originalPosPri);
+        } else {
+          item.el.style.removeProperty('position');
+        }
+        // Restaurar display original
+        if (item.originalDisplay) {
+          item.el.style.setProperty('display', item.originalDisplay, item.originalDispPri);
+        } else {
+          item.el.style.removeProperty('display');
+        }
+      }
     }
     hiddenElements = [];
 
-    // Quitar banda URL
     const bar = document.getElementById('__ss_urlbar__');
     if (bar) bar.remove();
     const style = document.getElementById('__ss_urlbar_style__');
     if (style) style.remove();
+    const freeze = document.getElementById('__ss_freeze__');
+    if (freeze) freeze.remove();
   }
 
   function injectUrlBar() {
