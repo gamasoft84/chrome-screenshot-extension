@@ -350,7 +350,7 @@ async function generateFilename(pageUrl) {
     // Si falla la carga del JSON, seguimos con el naming tradicional.
   }
 
-  return `${folderPath}${filenamePrefix}${urlToReadableName(pageUrl)}_${String(count).padStart(3,'0')}.png`;
+  return `${folderPath}${filenamePrefix}_${String(count).padStart(3,'0')}.png`;
 }
 
 function urlToReadableName(url) {
