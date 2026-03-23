@@ -45,6 +45,27 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   }
 });
 
+// Atajo de teclado (configurable en chrome://extensions/shortcuts)
+chrome.commands.onCommand.addListener((command) => {
+  if (command !== 'capture-visible-tab') return;
+  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+    const tab = tabs[0];
+    if (!tab?.id || !tab.url) return;
+    if (!canCaptureUrl(tab.url)) return;
+    handleCapture(tab.id, tab.url, () => {});
+  });
+});
+
+function canCaptureUrl(url) {
+  try {
+    const u = new URL(url);
+    const p = u.protocol;
+    return p === 'http:' || p === 'https:' || p === 'file:';
+  } catch {
+    return false;
+  }
+}
+
 async function handleCapture(tabId, pageUrl, sendResponse) {
   try {
     // 1. Generar nombre base desde la URL
