@@ -4,6 +4,7 @@ let currentTab = null;
 let autoInterval = null;
 let isAuto = false;
 let captureMode = 'full'; // 'full' | 'visible'
+let imageTreatmentEnabled = false;
 
 function queryActiveTab() {
   return new Promise((resolve) => {
@@ -31,6 +32,11 @@ chrome.storage.local.get('captureMode', (data) => {
     captureMode = data.captureMode;
     updateModeButtons();
   }
+});
+
+chrome.storage.local.get('imageTreatmentEnabled', (data) => {
+  imageTreatmentEnabled = Boolean(data.imageTreatmentEnabled);
+  document.getElementById('toggleTreatment').classList.toggle('on', imageTreatmentEnabled);
 });
 
 function loadHotkeyDisplay() {
@@ -109,6 +115,13 @@ document.getElementById('btnRegion').addEventListener('click', () => {
 // Capturar al hacer clic
 document.getElementById('btnCapture').addEventListener('click', () => {
   captureScreen();
+});
+
+document.getElementById('btnTreatmentToggle').addEventListener('click', () => {
+  imageTreatmentEnabled = !imageTreatmentEnabled;
+  document.getElementById('toggleTreatment').classList.toggle('on', imageTreatmentEnabled);
+  chrome.storage.local.set({ imageTreatmentEnabled });
+  showToast(imageTreatmentEnabled ? '🖼 Tratamiento activado' : '🧼 Tratamiento desactivado');
 });
 
 // Toggle automático

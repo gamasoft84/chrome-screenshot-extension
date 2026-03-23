@@ -66,12 +66,15 @@ async function captureRegion(tabId, windowId, pageUrl, region) {
   ctx.drawImage(img, cropX, cropY, cropW, cropH, 0, 0, cropW, cropH);
   img.close();
 
+  const processedDataUrl = await applyCaptureTreatmentIfEnabled(
+    await blobToBase64(await canvas.convertToBlob({ type: 'image/png' })),
+    pageUrl
+  );
+
   const filename = await generateFilename(pageUrl);
-  const blob     = await canvas.convertToBlob({ type: 'image/png' });
-  const finalUrl = await blobToBase64(blob);
 
   await chrome.downloads.download({
-    url: finalUrl,
+    url: processedDataUrl,
     filename: `screenshots/${filename}`,
     saveAs: false,
     conflictAction: 'uniquify'
@@ -119,6 +122,8 @@ async function handleCapture(tabId, windowId, pageUrl, mode = 'full') {
     await sendToTab(tabId, { action: 'hideProgress' }).catch(() => {});
     throw err;
   }
+
+  dataUrl = await applyCaptureTreatmentIfEnabled(dataUrl, pageUrl);
 
   const filename = await generateFilename(pageUrl);
   await chrome.downloads.download({
@@ -252,6 +257,33 @@ function sendToTab(tabId, message) {
 
 function sleep(ms) {
   return new Promise(r => setTimeout(r, ms));
+}
+
+async function applyCaptureTreatmentIfEnabled(dataUrl, pageUrl) {
+  const { imageTreatmentEnabled = false } = await chrome.storage.local.get('imageTreatmentEnabled');
+  if (!imageTreatmentEnabled) return dataUrl;
+  return applyCaptureTreatment(dataUrl);
+}
+
+async function applyCaptureTreatment(dataUrl) {
+  const img = await dataUrlToImageBitmap(dataUrl);
+  const canvas = new OffscreenCanvas(img.width, img.height);
+  const ctx = canvas.getContext('2d');
+
+  // Imagen base
+  ctx.drawImage(img, 0, 0);
+  img.close();
+
+  // Marco fino negro punteado
+  ctx.save();
+  ctx.strokeStyle = '#000000';
+  ctx.lineWidth = 1;
+  ctx.setLineDash([4, 3]);
+  ctx.strokeRect(0.5, 0.5, canvas.width - 1, canvas.height - 1);
+  ctx.restore();
+
+  const blob = await canvas.convertToBlob({ type: 'image/png' });
+  return blobToBase64(blob);
 }
 
 // Convierte dataURL → ImageBitmap usando fetch (disponible en Service Workers)
