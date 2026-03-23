@@ -287,6 +287,111 @@
       font-size: 11px;
       color: #555;
     }
+
+    .hotkey-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 10px 20px 0;
+      padding: 9px 14px;
+      background: #1a1a24;
+      border: 1px solid #2a2a38;
+      border-radius: 8px;
+    }
+
+    .hotkey-label {
+      font-size: 12px;
+      color: #888;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hotkey-badge {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .key {
+      background: #0f0f13;
+      border: 1px solid #3a3a50;
+      border-bottom: 2px solid #3a3a50;
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-size: 11px;
+      font-weight: 600;
+      color: #a78bfa;
+      font-family: monospace;
+    }
+
+    .key-sep {
+      font-size: 10px;
+      color: #444;
+    }
+
+    .btn-change-hotkey {
+      font-size: 10px;
+      color: #6c63ff;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 2px 0;
+      text-decoration: underline;
+      text-decoration-style: dotted;
+    }
+
+    .btn-change-hotkey:hover { color: #a78bfa; }
+
+    .btn-region {
+      display: block;
+      width: calc(100% - 40px);
+      margin: 8px 20px 0;
+      padding: 10px;
+      background: transparent;
+      color: #a78bfa;
+      border: 1px dashed #6c63ff;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      letter-spacing: 0.3px;
+      transition: background 0.15s, border-style 0.15s;
+    }
+    .btn-region:hover { background: rgba(108,99,255,0.1); border-style: solid; }
+    .btn-region:active { transform: scale(0.98); }
+
+    .mode-row {
+      display: flex;
+      margin: 10px 20px 0;
+      background: #1a1a24;
+      border: 1px solid #2a2a38;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .mode-btn {
+      flex: 1;
+      padding: 8px 0;
+      font-size: 11px;
+      font-weight: 600;
+      color: #555;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+      letter-spacing: 0.3px;
+    }
+
+    .mode-btn.active {
+      background: #6c63ff;
+      color: #fff;
+    }
+
+    .mode-btn:not(.active):hover {
+      color: #a0a0c0;
+      background: #222230;
+    }
   </style>
 </head>
 <body>
@@ -316,6 +421,27 @@
   </div>
 
   <button class="btn-capture" id="btnCapture">📸 Capturar ahora</button>
+
+  <div class="mode-row">
+    <button class="mode-btn active" id="modeFull" data-mode="full">🖥 Página completa</button>
+    <button class="mode-btn" id="modeVisible" data-mode="visible">👁 Solo visible</button>
+  </div>
+
+  <div class="hotkey-row">
+    <span class="hotkey-label">⌨️ Hotkey activo</span>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <div class="hotkey-badge" id="hotkeyBadge">
+        <span class="key">Ctrl</span>
+        <span class="key-sep">+</span>
+        <span class="key">Shift</span>
+        <span class="key-sep">+</span>
+        <span class="key">S</span>
+      </div>
+      <button class="btn-change-hotkey" id="btnChangeHotkey">cambiar</button>
+    </div>
+  </div>
+
+  <button class="btn-region" id="btnRegion">✂️ Seleccionar región</button>
 
   <button class="btn-auto" id="btnAutoToggle">
     <span class="btn-auto-label">⏱ Captura automática</span>

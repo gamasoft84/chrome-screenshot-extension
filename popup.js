@@ -3,6 +3,7 @@
 let currentTab = null;
 let autoInterval = null;
 let isAuto = false;
+let captureMode = 'full'; // 'full' | 'visible'
 
 // Obtener pestaña activa al abrir el popup
 chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
@@ -11,6 +12,80 @@ chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     document.getElementById('currentUrl').textContent = currentTab.url;
     updateCounters();
   }
+});
+
+// Mostrar el hotkey configurado actualmente
+loadHotkeyDisplay();
+
+// Restaurar modo guardado
+chrome.storage.local.get('captureMode', (data) => {
+  if (data.captureMode) {
+    captureMode = data.captureMode;
+    updateModeButtons();
+  }
+});
+
+function loadHotkeyDisplay() {
+  chrome.commands.getAll((commands) => {
+    const cmd = commands.find(c => c.name === 'capture-screenshot');
+    const badge = document.getElementById('hotkeyBadge');
+    if (cmd && cmd.shortcut) {
+      const keys = cmd.shortcut.split('+');
+      badge.innerHTML = keys.map((k, i) =>
+        `<span class="key">${k}</span>${i < keys.length - 1 ? '<span class="key-sep">+</span>' : ''}`
+      ).join('');
+    } else {
+      badge.innerHTML = '<span style="font-size:11px;color:#555;">Sin asignar</span>';
+    }
+  });
+}
+
+// Botón para ir a la página de atajos de Chrome
+document.getElementById('btnChangeHotkey').addEventListener('click', () => {
+  chrome.tabs.create({ url: 'chrome://extensions/shortcuts' });
+  window.close();
+});
+
+// Selector de modo de captura
+document.querySelectorAll('.mode-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    captureMode = btn.dataset.mode;
+    chrome.storage.local.set({ captureMode });
+    updateModeButtons();
+  });
+});
+
+function updateModeButtons() {
+  document.querySelectorAll('.mode-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.mode === captureMode);
+  });
+  const btn = document.getElementById('btnCapture');
+  btn.textContent = captureMode === 'full' ? '📸 Capturar página completa' : '📸 Capturar visible';
+}
+
+// Selección de región
+document.getElementById('btnRegion').addEventListener('click', () => {
+  if (!currentTab) return;
+  // Enviar mensaje al background para iniciar selector
+  chrome.runtime.sendMessage({
+    action: 'startRegionCapture',
+    tabId:    currentTab.id,
+    windowId: currentTab.windowId,
+    url:      currentTab.url
+  });
+  // Escuchar resultado via storage session
+  chrome.storage.session.onChanged.addListener(function onCapture(changes) {
+    if (changes.lastCapture) {
+      chrome.storage.session.onChanged.removeListener(onCapture);
+      const result = changes.lastCapture.newValue;
+      if (result?.success) {
+        updateCounters();
+        addToHistory(result.filename);
+        showToast(`✅ Región guardada: ${result.filename}`);
+      }
+    }
+  });
+  window.close(); // cerrar popup para que el selector sea visible
 });
 
 // Capturar al hacer clic
@@ -60,24 +135,25 @@ function captureScreen(isAutoCapture = false) {
   const btn = document.getElementById('btnCapture');
   if (!isAutoCapture) {
     btn.disabled = true;
-    btn.textContent = '⏳ Capturando...';
+    btn.textContent = captureMode === 'full' ? '⏳ Capturando página...' : '⏳ Capturando...';
   }
 
-  // Enviar mensaje al background script
   chrome.runtime.sendMessage(
-    { action: 'capture', tabId: currentTab.id, url: currentTab.url },
+    { action: 'capture', tabId: currentTab.id, windowId: currentTab.windowId, url: currentTab.url, mode: captureMode },
     (response) => {
       if (response && response.success) {
         updateCounters();
         addToHistory(response.filename);
         showToast(`✅ Guardado: ${response.filename}`);
       } else {
-        showToast('❌ Error al capturar');
+        const err = response?.error || 'Error desconocido';
+        showToast(`❌ ${err}`);
+        console.error('[Screenshot popup]', err);
       }
 
       if (!isAutoCapture) {
         btn.disabled = false;
-        btn.textContent = '📸 Capturar ahora';
+        updateModeButtons();
       }
     }
   );
