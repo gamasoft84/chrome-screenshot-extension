@@ -332,7 +332,8 @@ async function generateFilename(pageUrl) {
   const count = (data[key] || 0) + 1;
   await chrome.storage.local.set({ [key]: count });
 
-  let prefix = '';
+  let folderPath = '';
+  let filenamePrefix = '';
   try {
     const tramites = await getTramitesLiberados();
     const match = findTramiteForUrl(pageUrl, tramites);
@@ -340,13 +341,16 @@ async function generateFilename(pageUrl) {
       // En el JSON el campo se llama `departmento`.
       const departamento = match.departmento;
       const idTipoTramite = match.id_tipo_tramite;
-      prefix = `${safeFilenameSegment(departamento)}_${safeFilenameSegment(idTipoTramite)}_`;
+      const safeDepartamento = safeFilenameSegment(departamento);
+      const safeIdTipoTramite = safeFilenameSegment(idTipoTramite);
+      folderPath = `${safeDepartamento}/${safeIdTipoTramite}/`;
+      filenamePrefix = `${safeDepartamento}_${safeIdTipoTramite}_`;
     }
   } catch (e) {
     // Si falla la carga del JSON, seguimos con el naming tradicional.
   }
 
-  return `${prefix}_${String(count).padStart(3,'0')}.png`;
+  return `${folderPath}${filenamePrefix}${urlToReadableName(pageUrl)}_${String(count).padStart(3,'0')}.png`;
 }
 
 function urlToReadableName(url) {
