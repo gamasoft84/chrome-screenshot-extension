@@ -344,7 +344,7 @@ async function generateFilename(pageUrl) {
       const safeDepartamento = safeFilenameSegment(departamento);
       const safeIdTipoTramite = safeFilenameSegment(idTipoTramite);
       folderPath = `${safeDepartamento}/${safeIdTipoTramite}/`;
-      filenamePrefix = `${safeDepartamento}_${safeIdTipoTramite}_`;
+      filenamePrefix = `${safeDepartamento}_${safeIdTipoTramite}`;
     }
   } catch (e) {
     // Si falla la carga del JSON, seguimos con el naming tradicional.
