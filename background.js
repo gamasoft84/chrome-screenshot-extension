@@ -260,12 +260,20 @@ function sleep(ms) {
 }
 
 async function applyCaptureTreatmentIfEnabled(dataUrl, pageUrl) {
-  const { imageTreatmentEnabled = false } = await chrome.storage.local.get('imageTreatmentEnabled');
+  const {
+    imageTreatmentEnabled = false,
+    imageBorderColor = '#000000',
+    imageBorderSize = 2
+  } = await chrome.storage.local.get([
+    'imageTreatmentEnabled',
+    'imageBorderColor',
+    'imageBorderSize'
+  ]);
   if (!imageTreatmentEnabled) return dataUrl;
-  return applyCaptureTreatment(dataUrl);
+  return applyCaptureTreatment(dataUrl, imageBorderColor, imageBorderSize);
 }
 
-async function applyCaptureTreatment(dataUrl) {
+async function applyCaptureTreatment(dataUrl, borderColor = '#000000', borderSize = 2) {
   const img = await dataUrlToImageBitmap(dataUrl);
   const canvas = new OffscreenCanvas(img.width, img.height);
   const ctx = canvas.getContext('2d');
@@ -276,10 +284,11 @@ async function applyCaptureTreatment(dataUrl) {
 
   // Marco fino negro punteado
   ctx.save();
-  ctx.strokeStyle = '#000000';
-  ctx.lineWidth = 1;
+  ctx.strokeStyle = borderColor || '#000000';
+  ctx.lineWidth = Math.min(10, Math.max(1, Number(borderSize) || 2));
   ctx.setLineDash([4, 3]);
-  ctx.strokeRect(0.5, 0.5, canvas.width - 1, canvas.height - 1);
+  const inset = ctx.lineWidth / 2;
+  ctx.strokeRect(inset, inset, canvas.width - ctx.lineWidth, canvas.height - ctx.lineWidth);
   ctx.restore();
 
   const blob = await canvas.convertToBlob({ type: 'image/png' });

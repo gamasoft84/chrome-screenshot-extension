@@ -5,6 +5,8 @@ let autoInterval = null;
 let isAuto = false;
 let captureMode = 'full'; // 'full' | 'visible'
 let imageTreatmentEnabled = false;
+let imageBorderColor = '#000000';
+let imageBorderSize = 2;
 
 function queryActiveTab() {
   return new Promise((resolve) => {
@@ -34,9 +36,15 @@ chrome.storage.local.get('captureMode', (data) => {
   }
 });
 
-chrome.storage.local.get('imageTreatmentEnabled', (data) => {
+chrome.storage.local.get(['imageTreatmentEnabled', 'imageBorderColor', 'imageBorderSize'], (data) => {
   imageTreatmentEnabled = Boolean(data.imageTreatmentEnabled);
   document.getElementById('toggleTreatment').classList.toggle('on', imageTreatmentEnabled);
+  document.getElementById('treatmentRow').classList.toggle('visible', imageTreatmentEnabled);
+
+  imageBorderColor = data.imageBorderColor || '#000000';
+  imageBorderSize = Number(data.imageBorderSize) || 2;
+  document.getElementById('borderColor').value = imageBorderColor;
+  document.getElementById('borderSize').value = String(imageBorderSize);
 });
 
 function loadHotkeyDisplay() {
@@ -120,8 +128,21 @@ document.getElementById('btnCapture').addEventListener('click', () => {
 document.getElementById('btnTreatmentToggle').addEventListener('click', () => {
   imageTreatmentEnabled = !imageTreatmentEnabled;
   document.getElementById('toggleTreatment').classList.toggle('on', imageTreatmentEnabled);
+  document.getElementById('treatmentRow').classList.toggle('visible', imageTreatmentEnabled);
   chrome.storage.local.set({ imageTreatmentEnabled });
   showToast(imageTreatmentEnabled ? '🖼 Tratamiento activado' : '🧼 Tratamiento desactivado');
+});
+
+document.getElementById('borderColor').addEventListener('input', (e) => {
+  imageBorderColor = e.target.value || '#000000';
+  chrome.storage.local.set({ imageBorderColor });
+});
+
+document.getElementById('borderSize').addEventListener('change', (e) => {
+  const parsed = Number(e.target.value);
+  imageBorderSize = Number.isFinite(parsed) ? Math.min(10, Math.max(1, parsed)) : 2;
+  e.target.value = String(imageBorderSize);
+  chrome.storage.local.set({ imageBorderSize });
 });
 
 // Toggle automático
