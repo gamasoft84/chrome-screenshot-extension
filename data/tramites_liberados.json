@@ -1,0 +1,2174 @@
+[
+    {
+      "id": "620",
+      "departmento": "manifestacionvalor",
+      "id_tipo_tramite": "0",
+      "URL": "https://front.v30.ultrasist.net/manifestacionvalor/consulta-manifestacion"
+    },
+    {
+      "id": "621",
+      "departmento": "manifestacionvalor",
+      "id_tipo_tramite": "0",
+      "URL": "https://front.v30.ultrasist.net/manifestacionvalor/edicion-manifestacion"
+    },
+    {
+      "id": "622",
+      "departmento": "manifestacionvalor",
+      "id_tipo_tramite": "0",
+      "URL": "https://front.v30.ultrasist.net/manifestacionvalor/manifestacion-valor"
+    },
+    {
+      "id": "604",
+      "departmento": "aga",
+      "id_tipo_tramite": "103",
+      "URL": "https://front.v30.ultrasist.net/aga/autorizacion/mercancia-donada"
+    },
+    {
+      "id": "1",
+      "departmento": "aga",
+      "id_tipo_tramite": "104",
+      "URL": "https://front.v30.ultrasist.net/aga/deposito-fiscal/solicitud"
+    },
+    {
+      "id": "172",
+      "departmento": "aga",
+      "id_tipo_tramite": "105",
+      "URL": "https://front.v30.ultrasist.net/aga/invocar-modulo/solicitante"
+    },
+    {
+      "id": "186",
+      "departmento": "aga",
+      "id_tipo_tramite": "202",
+      "URL": "https://front.v30.ultrasist.net/aga/prestadores-servicio/maniobras-mercancias"
+    },
+    {
+      "id": "2",
+      "departmento": "aga",
+      "id_tipo_tramite": "301",
+      "URL": "https://front.v30.ultrasist.net/aga/importante/datosdelasolicitud"
+    },
+    {
+      "id": "128",
+      "departmento": "aga",
+      "id_tipo_tramite": "302",
+      "URL": "https://front.v30.ultrasist.net/aga/certi-registro/proceso-completo"
+    },
+    {
+      "id": "3",
+      "departmento": "agace",
+      "id_tipo_tramite": "303",
+      "URL": "https://front.v30.ultrasist.net/aga/despacho-mercancias/registro/registro"
+    },
+    {
+      "id": "303",
+      "departmento": "aga",
+      "id_tipo_tramite": "303",
+      "URL": "https://front.v30.ultrasist.net/aga/despacho-mercancias/registro/registro"
+    },
+    {
+      "id": "174",
+      "departmento": "agace",
+      "id_tipo_tramite": "317",
+      "URL": "https://front.v30.ultrasist.net/agace/aviso-unico-renovacion/pantallas"
+    },
+    {
+      "id": "312",
+      "departmento": "aga",
+      "id_tipo_tramite": "319",
+      "URL": "https://front.v30.ultrasist.net/aga/operaciones-de-comercio/exterior"
+    },
+    {
+      "id": "332",
+      "departmento": "aga",
+      "id_tipo_tramite": "324",
+      "URL": "https://front.v30.ultrasist.net/aga/tecnologicos/solicitud"
+    },
+    {
+      "id": "4",
+      "departmento": "aga",
+      "id_tipo_tramite": "701",
+      "URL": "https://front.v30.ultrasist.net/aga/registro-digitalizar-documentos/solicitud"
+    },
+    {
+      "id": "280",
+      "departmento": "aga",
+      "id_tipo_tramite": "5601",
+      "URL": "https://front.v30.ultrasist.net/aga/solicitud-despacho-exportacion/solicitud"
+    },
+    {
+      "id": "5",
+      "departmento": "aga",
+      "id_tipo_tramite": "5701",
+      "URL": "https://front.v30.ultrasist.net/aga/servicios-extraordinarios/solicitud"
+    },
+    {
+      "id": "6",
+      "departmento": "aga",
+      "id_tipo_tramite": "5701",
+      "URL": "https://front.v30.ultrasist.net/aga/atender-requerimientos"
+    },
+    {
+      "id": "7",
+      "departmento": "aga",
+      "id_tipo_tramite": "5701",
+      "URL": "https://front.v30.ultrasist.net/aga/notificacion"
+    },
+    {
+      "id": "8",
+      "departmento": "aga",
+      "id_tipo_tramite": "6001",
+      "URL": "https://front.v30.ultrasist.net/aga/registro-cuentas-bancarias/todospasos"
+    },
+    {
+      "id": "187",
+      "departmento": "aga",
+      "id_tipo_tramite": "6101",
+      "URL": "https://front.v30.ultrasist.net/aga/junta-tecnica/solicitud"
+    },
+    {
+      "id": "299",
+      "departmento": "aga",
+      "id_tipo_tramite": "6102",
+      "URL": "https://front.v30.ultrasist.net/aga/junta-tecnica-registro/registro-tecnica"
+    },
+    {
+      "id": "303",
+      "departmento": "aga",
+      "id_tipo_tramite": "6203",
+      "URL": "https://front.v30.ultrasist.net/aga/desistimiento-animales/solicitante"
+    },
+    {
+      "id": "300",
+      "departmento": "aga",
+      "id_tipo_tramite": "6402",
+      "URL": "https://front.v30.ultrasist.net/aga/autorizacion-importacion/solicitante"
+    },
+    {
+      "id": "301",
+      "departmento": "aga",
+      "id_tipo_tramite": "6403",
+      "URL": "https://front.v30.ultrasist.net/aga/retorno-de-partes/solicitante"
+    },
+    {
+      "id": "302",
+      "departmento": "aga",
+      "id_tipo_tramite": "6502",
+      "URL": "https://front.v30.ultrasist.net/aga/registro-poblacional/solicitud"
+    },
+    {
+      "id": "9",
+      "departmento": "aga",
+      "id_tipo_tramite": "10301",
+      "URL": "https://front.v30.ultrasist.net/aga/importador-exportador/solicitud"
+    },
+    {
+      "id": "129",
+      "departmento": "aga",
+      "id_tipo_tramite": "10302",
+      "URL": "https://front.v30.ultrasist.net/aga/exencion-impuestos/solicitud"
+    },
+    {
+      "id": "10",
+      "departmento": "aga",
+      "id_tipo_tramite": "10303",
+      "URL": "https://front.v30.ultrasist.net/aga/donaciones-extranjeras/solicitud"
+    },
+    {
+      "id": "370",
+      "departmento": "aga",
+      "id_tipo_tramite": "10703",
+      "URL": "https://front.v30.ultrasist.net/aga/importador-exportador/modification-exencion-impuestos"
+    },
+    {
+      "id": "303",
+      "departmento": "aga",
+      "id_tipo_tramite": "11101",
+      "URL": "https://front.v30.ultrasist.net/aga/fronteriza/aviso-mercancia-donada"
+    },
+    {
+      "id": "188",
+      "departmento": "aga",
+      "id_tipo_tramite": "11102",
+      "URL": "https://front.v30.ultrasist.net/aga/modificacion-donaciones-immex/solicitante"
+    },
+    {
+      "id": "11",
+      "departmento": "aga",
+      "id_tipo_tramite": "11105",
+      "URL": "https://front.v30.ultrasist.net/aga/retirada-de-la-autorizacion-de-donaciones/solicitud"
+    },
+    {
+      "id": "189",
+      "departmento": "aga",
+      "id_tipo_tramite": "11106",
+      "URL": "https://front.v30.ultrasist.net/aga/cancelacion-donaciones/solicitante"
+    },
+    {
+      "id": "12",
+      "departmento": "aga",
+      "id_tipo_tramite": "11201",
+      "URL": "https://front.v30.ultrasist.net/aga/temporal-contenedores/solicitante"
+    },
+    {
+      "id": "13",
+      "departmento": "aga",
+      "id_tipo_tramite": "11202",
+      "URL": "https://front.v30.ultrasist.net/aga/retorno-contenedores/solicitante"
+    },
+    {
+      "id": "14",
+      "departmento": "aga",
+      "id_tipo_tramite": "11204",
+      "URL": "https://front.v30.ultrasist.net/aga/transferencia-contenedores/solicitante"
+    },
+    {
+      "id": "190",
+      "departmento": "aga",
+      "id_tipo_tramite": "30401",
+      "URL": "https://front.v30.ultrasist.net/aga/registro-empresas/transporte"
+    },
+    {
+      "id": "191",
+      "departmento": "agace",
+      "id_tipo_tramite": "30505",
+      "URL": "https://front.v30.ultrasist.net/agace/aviso-de-modificacion/aviso"
+    },
+    {
+      "id": "606",
+      "departmento": "agace",
+      "id_tipo_tramite": "30506",
+      "URL": "https://front.v30.ultrasist.net/agace/registros/solicitud"
+    },
+    {
+      "id": "15",
+      "departmento": "aga",
+      "id_tipo_tramite": "30901",
+      "URL": "https://front.v30.ultrasist.net/aga/muestras-mercancias/renovaciones"
+    },
+    {
+      "id": "198",
+      "departmento": "agace",
+      "id_tipo_tramite": "31101",
+      "URL": "https://front.v30.ultrasist.net/agace/garantia/solicitud"
+    },
+    {
+      "id": "173",
+      "departmento": "aga",
+      "id_tipo_tramite": "31201",
+      "URL": "https://front.v30.ultrasist.net/aga/renovacion-iva-ieps/mod-a"
+    },
+    {
+      "id": "192",
+      "departmento": "aga",
+      "id_tipo_tramite": "31202",
+      "URL": "https://front.v30.ultrasist.net/aga/renovacion-iva-ieps/mod-aa"
+    },
+    {
+      "id": "193",
+      "departmento": "aga",
+      "id_tipo_tramite": "31203",
+      "URL": "https://front.v30.ultrasist.net/aga/renovacion-iva-ieps/mod-aaa"
+    },
+    {
+      "id": "199",
+      "departmento": "agace",
+      "id_tipo_tramite": "31301",
+      "URL": "https://front.v30.ultrasist.net/agace/endoso-garantia/solicitud"
+    },
+    {
+      "id": "304",
+      "departmento": "agace",
+      "id_tipo_tramite": "31401",
+      "URL": "https://front.v30.ultrasist.net/agace/cancelacion-garantia/pantallas"
+    },
+    {
+      "id": "135",
+      "departmento": "agace",
+      "id_tipo_tramite": "31501",
+      "URL": "https://front.v30.ultrasist.net/agace/autoridad/solicitud"
+    },
+    {
+      "id": "16",
+      "departmento": "agace",
+      "id_tipo_tramite": "31601",
+      "URL": "https://front.v30.ultrasist.net/agace/antecesor/datosdelasolicitud"
+    },
+    {
+      "id": "200",
+      "departmento": "agace",
+      "id_tipo_tramite": "31602",
+      "URL": "https://front.v30.ultrasist.net/agace/registros-de-comercio-exterior/registrar-solicitud"
+    },
+    {
+      "id": "201",
+      "departmento": "agace",
+      "id_tipo_tramite": "31603",
+      "URL": "https://front.v30.ultrasist.net/agace/registros-de-comercio-exterior/registrar-solicitud31603"
+    },
+    {
+      "id": "204",
+      "departmento": "agace",
+      "id_tipo_tramite": "31616",
+      "URL": "https://front.v30.ultrasist.net/agace/solicitud-de-registro-invocar/solicitud"
+    },
+    {
+      "id": "283",
+      "departmento": "agace",
+      "id_tipo_tramite": "31801",
+      "URL": "https://front.v30.ultrasist.net/agace/renovacion-comercializadora/renovacion"
+    },
+    {
+      "id": "137",
+      "departmento": "agace",
+      "id_tipo_tramite": "31802",
+      "URL": "https://front.v30.ultrasist.net/agace/registro-solicitud/solicitud"
+    },
+    {
+      "id": "17",
+      "departmento": "agace",
+      "id_tipo_tramite": "31803",
+      "URL": "https://front.v30.ultrasist.net/agace/registro/solicitud"
+    },
+    {
+      "id": "205",
+      "departmento": "agace",
+      "id_tipo_tramite": "32101",
+      "URL": "https://front.v30.ultrasist.net/agace/consulta-aviso-acreditacion/solicitud"
+    },
+    {
+      "id": "206",
+      "departmento": "agace",
+      "id_tipo_tramite": "32102",
+      "URL": "https://front.v30.ultrasist.net/agace/aviso-de-ampliacion/solicitud"
+    },
+    {
+      "id": "207",
+      "departmento": "agace",
+      "id_tipo_tramite": "32201",
+      "URL": "https://front.v30.ultrasist.net/agace/anexo-veintiocho/solicitud"
+    },
+    {
+      "id": "113",
+      "departmento": "agace",
+      "id_tipo_tramite": "32301",
+      "URL": "https://front.v30.ultrasist.net/agace/aviso/aviso-modificacion"
+    },
+    {
+      "id": "138",
+      "departmento": "agace",
+      "id_tipo_tramite": "32401",
+      "URL": "https://front.v30.ultrasist.net/agace/manifiesto-aereo/solicitar-requiremento"
+    },
+    {
+      "id": "18",
+      "departmento": "agace",
+      "id_tipo_tramite": "32501",
+      "URL": "https://front.v30.ultrasist.net/agace/mercancias-desmontadas-o-sin-montar/solicitud"
+    },
+    {
+      "id": "19",
+      "departmento": "agace",
+      "id_tipo_tramite": "32502",
+      "URL": "https://front.v30.ultrasist.net/agace/aviso/solicitud"
+    },
+    {
+      "id": "139",
+      "departmento": "agace",
+      "id_tipo_tramite": "32503",
+      "URL": "https://front.v30.ultrasist.net/agace/aviso-traslado/solicitante"
+    },
+    {
+      "id": "20",
+      "departmento": "agace",
+      "id_tipo_tramite": "32504",
+      "URL": "https://front.v30.ultrasist.net/agace/aviso-procesos/solicitud"
+    },
+    {
+      "id": "140",
+      "departmento": "agace",
+      "id_tipo_tramite": "32505",
+      "URL": "https://front.v30.ultrasist.net/agace/aviso-procesos-solicitante"
+    },
+    {
+      "id": "141",
+      "departmento": "agace",
+      "id_tipo_tramite": "32506",
+      "URL": "https://front.v30.ultrasist.net/agace/aviso-destruccion/solicitante"
+    },
+    {
+      "id": "142",
+      "departmento": "agace",
+      "id_tipo_tramite": "32507",
+      "URL": "https://front.v30.ultrasist.net/agace/entrega-acta-solicitante"
+    },
+    {
+      "id": "143",
+      "departmento": "agace",
+      "id_tipo_tramite": "32508",
+      "URL": "https://front.v30.ultrasist.net/agace/adace/solicitud"
+    },
+    {
+      "id": "441",
+      "departmento": "agace",
+      "id_tipo_tramite": "32509",
+      "URL": "https://front.v30.ultrasist.net/agace/aviso-mercancia/destruccion-o-donacion"
+    },
+    {
+      "id": "443",
+      "departmento": "agace",
+      "id_tipo_tramite": "32511",
+      "URL": "https://front.v30.ultrasist.net/agace/avisos-agace/aviso-de-merc-auto-deportivos"
+    },
+    {
+      "id": "444",
+      "departmento": "agace",
+      "id_tipo_tramite": "32512",
+      "URL": "https://front.v30.ultrasist.net/agace/aviso-destruccion-mercancias/solicitud"
+    },
+    {
+      "id": "445",
+      "departmento": "agace",
+      "id_tipo_tramite": "32513",
+      "URL": "https://front.v30.ultrasist.net/agace/aviso-tesoreria/solicitud"
+    },
+    {
+      "id": "446",
+      "departmento": "agace",
+      "id_tipo_tramite": "32514",
+      "URL": "https://front.v30.ultrasist.net/agace/retorno-seguro-vehiculos-extranjeros/solicitud"
+    },
+    {
+      "id": "447",
+      "departmento": "agace",
+      "id_tipo_tramite": "32515",
+      "URL": "https://front.v30.ultrasist.net/agace/aviso-opcion-seguro-global/solicitante"
+    },
+    {
+      "id": "448",
+      "departmento": "agace",
+      "id_tipo_tramite": "32516",
+      "URL": "https://front.v30.ultrasist.net/agace/acta-de-hechos/solicitud"
+    },
+    {
+      "id": "610",
+      "departmento": "agace",
+      "id_tipo_tramite": "32604",
+      "URL": "https://front.v30.ultrasist.net/agace/empresas-comercializadoras/solicitud"
+    },
+    {
+      "id": "136",
+      "departmento": "agace",
+      "id_tipo_tramite": "32605",
+      "URL": "https://front.v30.ultrasist.net/agace/importador-y-o-exportador/solicitud"
+    },
+    {
+      "id": "612",
+      "departmento": "agace",
+      "id_tipo_tramite": "32606",
+      "URL": "https://front.v30.ultrasist.net/agace/economico/solicitud"
+    },
+    {
+      "id": "609",
+      "departmento": "agace",
+      "id_tipo_tramite": "32607",
+      "URL": "https://front.v30.ultrasist.net/agace/aeronaves/solicitud"
+    },
+    {
+      "id": "614",
+      "departmento": "agace",
+      "id_tipo_tramite": "32608",
+      "URL": "https://front.v30.ultrasist.net/agace/seciit-oea-registration/solicitud"
+    },
+    {
+      "id": "32609",
+      "departmento": "agace",
+      "id_tipo_tramite": "32609",
+      "URL": "https://front.v30.ultrasist.net/agace/certificacion-empresas/operador-economico-autorizado-textil"
+    },
+    {
+      "id": "611",
+      "departmento": "agace",
+      "id_tipo_tramite": "32610",
+      "URL": "https://front.v30.ultrasist.net/agace/registro-oae-rfe/solicitud"
+    },
+    {
+      "id": "615",
+      "departmento": "agace",
+      "id_tipo_tramite": "32611",
+      "URL": "https://front.v30.ultrasist.net/agace/auto-transportista/solicitud"
+    },
+    {
+      "id": "609",
+      "departmento": "agace",
+      "id_tipo_tramite": "32612",
+      "URL": "https://front.v30.ultrasist.net/agace/esquema-de-certificacion/registro-solicitud32612"
+    },
+    {
+      "id": "610",
+      "departmento": "agace",
+      "id_tipo_tramite": "32613",
+      "URL": "https://front.v30.ultrasist.net/agace/rubro-transporte-ferroviario/pantallas"
+    },
+    {
+      "id": "606",
+      "departmento": "agace",
+      "id_tipo_tramite": "32614",
+      "URL": "https://front.v30.ultrasist.net/agace/importador-y-o-exportador2/solicitud"
+    },
+    {
+      "id": "613",
+      "departmento": "agace",
+      "id_tipo_tramite": "32615",
+      "URL": "https://front.v30.ultrasist.net/agace/recinto-fiscalizado/solicitud"
+    },
+    {
+      "id": "606",
+      "departmento": "se",
+      "id_tipo_tramite": "32616",
+      "URL": "https://front.v30.ultrasist.net/agace/solicitud-de-registro/solicitud"
+    },
+    {
+      "id": "32617",
+      "departmento": "agace",
+      "id_tipo_tramite": "32617",
+      "URL": "https://front.v30.ultrasist.net/agace/certificacion-empresas-modalidad/oea-tercerizacion-logistica"
+    },
+    {
+      "id": "613",
+      "departmento": "agace",
+      "id_tipo_tramite": "32618",
+      "URL": "https://front.v30.ultrasist.net/agace/sce-socio-almacenamiento/solicitud"
+    },
+    {
+      "id": "607",
+      "departmento": "agace",
+      "id_tipo_tramite": "33302",
+      "URL": "https://front.v30.ultrasist.net/agace/aviso-certificacion/aviso-certificacion"
+    },
+    {
+      "id": "608",
+      "departmento": "agace",
+      "id_tipo_tramite": "33303",
+      "URL": "https://front.v30.ultrasist.net/agace/aviso-modification-certificacion/pantallas"
+    },
+    {
+      "id": "616",
+      "departmento": "agace",
+      "id_tipo_tramite": "33304",
+      "URL": "https://front.v30.ultrasist.net/agace/aviso-comercializadora-modification-importadora/solicitud"
+    },
+    {
+      "id": "21",
+      "departmento": "aga",
+      "id_tipo_tramite": "40101",
+      "URL": "https://front.v30.ultrasist.net/aga/transportista-terrestre/solicitante"
+    },
+    {
+      "id": "22",
+      "departmento": "aga",
+      "id_tipo_tramite": "40102",
+      "URL": "https://front.v30.ultrasist.net/aga/transportista-renovacion/solicitante"
+    },
+    {
+      "id": "23",
+      "departmento": "aga",
+      "id_tipo_tramite": "40103",
+      "URL": "https://front.v30.ultrasist.net/aga/modificar-caat-terrestre/solicitante"
+    },
+    {
+      "id": "130",
+      "departmento": "aga",
+      "id_tipo_tramite": "40201",
+      "URL": "https://front.v30.ultrasist.net/aga/transportacion-maritima/asignar-caat-maritimo"
+    },
+    {
+      "id": "194",
+      "departmento": "aga",
+      "id_tipo_tramite": "40202",
+      "URL": "https://front.v30.ultrasist.net/aga/modificacion-transportacion-maritima/modificar-caat-maritimo"
+    },
+    {
+      "id": "131",
+      "departmento": "aga",
+      "id_tipo_tramite": "40301",
+      "URL": "https://front.v30.ultrasist.net/aga/registro-caat-naviero/solicitud"
+    },
+    {
+      "id": "24",
+      "departmento": "aga",
+      "id_tipo_tramite": "40302",
+      "URL": "https://front.v30.ultrasist.net/aga/registro-transportista/solicitante"
+    },
+    {
+      "id": "132",
+      "departmento": "aga",
+      "id_tipo_tramite": "40401",
+      "URL": "https://front.v30.ultrasist.net/aga/registro-del-codigo/solicitud"
+    },
+    {
+      "id": "133",
+      "departmento": "aga",
+      "id_tipo_tramite": "40402",
+      "URL": "https://front.v30.ultrasist.net/aga/codigo-transportista"
+    },
+    {
+      "id": "112",
+      "departmento": "aga",
+      "id_tipo_tramite": "40403",
+      "URL": "https://front.v30.ultrasist.net/aga/atencion-de-renovacion/solicitante"
+    },
+    {
+      "id": "25",
+      "departmento": "se",
+      "id_tipo_tramite": "80101",
+      "URL": "https://front.v30.ultrasist.net/se/nuevo-programa-industrial/action"
+    },
+    {
+      "id": "26",
+      "departmento": "se",
+      "id_tipo_tramite": "80102",
+      "URL": "https://front.v30.ultrasist.net/se/autorizacion-programa-nuevo/solicitud"
+    },
+    {
+      "id": "285",
+      "departmento": "se",
+      "id_tipo_tramite": "80103",
+      "URL": "https://front.v30.ultrasist.net/se/registro-solicitud-immex-modalidad/action"
+    },
+    {
+      "id": "286",
+      "departmento": "se",
+      "id_tipo_tramite": "80104",
+      "URL": "https://front.v30.ultrasist.net/se/registro-solicitud-immex-modalidad-controladora/action"
+    },
+    {
+      "id": "287",
+      "departmento": "se",
+      "id_tipo_tramite": "80105",
+      "URL": "https://front.v30.ultrasist.net/se/modalidad-terciarizacion/action"
+    },
+    {
+      "id": "27",
+      "departmento": "se",
+      "id_tipo_tramite": "80202",
+      "URL": "https://front.v30.ultrasist.net/se/immex-ampliacion-sensibles/programa-immex"
+    },
+    {
+      "id": "28",
+      "departmento": "se",
+      "id_tipo_tramite": "80203",
+      "URL": "https://front.v30.ultrasist.net/se/immex-registro-solicitud-modality/programa-immex"
+    },
+    {
+      "id": "29",
+      "departmento": "se",
+      "id_tipo_tramite": "80205",
+      "URL": "https://front.v30.ultrasist.net/se/certificado-registro/programa-immex"
+    },
+    {
+      "id": "245",
+      "departmento": "se",
+      "id_tipo_tramite": "80206",
+      "URL": "https://front.v30.ultrasist.net/se/modalidad-ampliacion/programa-immex"
+    },
+    {
+      "id": "30",
+      "departmento": "se",
+      "id_tipo_tramite": "80207",
+      "URL": "https://front.v30.ultrasist.net/se/subfabricante-immex/programa-immex"
+    },
+    {
+      "id": "31",
+      "departmento": "se",
+      "id_tipo_tramite": "80208",
+      "URL": "https://front.v30.ultrasist.net/se/solicitud-modalidad/programa-immex"
+    },
+    {
+      "id": "288",
+      "departmento": "se",
+      "id_tipo_tramite": "80210",
+      "URL": "https://front.v30.ultrasist.net/se/registro-solicitud-immex/programa-immex"
+    },
+    {
+      "id": "289",
+      "departmento": "se",
+      "id_tipo_tramite": "80211",
+      "URL": "https://front.v30.ultrasist.net/se/registro-expansion/programa-immex"
+    },
+    {
+      "id": "246",
+      "departmento": "se",
+      "id_tipo_tramite": "80301",
+      "URL": "https://front.v30.ultrasist.net/se/registro-solicitud/registro-solicitud"
+    },
+    {
+      "id": "32",
+      "departmento": "se",
+      "id_tipo_tramite": "80302",
+      "URL": "https://front.v30.ultrasist.net/se/solicitud-modificacion/registro-solicitud"
+    },
+    {
+      "id": "314",
+      "departmento": "se",
+      "id_tipo_tramite": "80303",
+      "URL": "https://front.v30.ultrasist.net/se/registro-solicitude/registro-solicitude"
+    },
+    {
+      "id": "600",
+      "departmento": "se",
+      "id_tipo_tramite": "80306",
+      "URL": "https://front.v30.ultrasist.net/se/immex-modificacion/registro-modificacion"
+    },
+    {
+      "id": "33",
+      "departmento": "se",
+      "id_tipo_tramite": "80308",
+      "URL": "https://front.v30.ultrasist.net/se/modificacion/programas-immex"
+    },
+    {
+      "id": "290",
+      "departmento": "se",
+      "id_tipo_tramite": "80314",
+      "URL": "https://front.v30.ultrasist.net/se/immex-modificacion-cambio-de-sector/programas-immex"
+    },
+    {
+      "id": "291",
+      "departmento": "se",
+      "id_tipo_tramite": "80316",
+      "URL": "https://front.v30.ultrasist.net/se/modificaciones-immex/tipo-de-persona"
+    },
+    {
+      "id": "34",
+      "departmento": "se",
+      "id_tipo_tramite": "90101",
+      "URL": "https://front.v30.ultrasist.net/se/autorizacion-prosec/prosec"
+    },
+    {
+      "id": "292",
+      "departmento": "se",
+      "id_tipo_tramite": "90102",
+      "URL": "https://front.v30.ultrasist.net/se/autorizacion-prosec-productor/productores-indirectos"
+    },
+    {
+      "id": "35",
+      "departmento": "se",
+      "id_tipo_tramite": "90201",
+      "URL": "https://front.v30.ultrasist.net/se/expansion-de-productores/prosec-tabla"
+    },
+    {
+      "id": "293",
+      "departmento": "se",
+      "id_tipo_tramite": "90202",
+      "URL": "https://front.v30.ultrasist.net/se/ampliacion-prosec-productor/programas-disponibles-ampliar"
+    },
+    {
+      "id": "315",
+      "departmento": "se",
+      "id_tipo_tramite": "90302",
+      "URL": "https://front.v30.ultrasist.net/se/programa-prosec/programas-prosec"
+    },
+    {
+      "id": "294",
+      "departmento": "se",
+      "id_tipo_tramite": "90303",
+      "URL": "https://front.v30.ultrasist.net/se/catalogos/programas-prosec"
+    },
+    {
+      "id": "295",
+      "departmento": "se",
+      "id_tipo_tramite": "90304",
+      "URL": "https://front.v30.ultrasist.net/se/modificaciones-immex-prosec/lista-programas"
+    },
+    {
+      "id": "36",
+      "departmento": "se",
+      "id_tipo_tramite": "90305",
+      "URL": "https://front.v30.ultrasist.net/se/prosec-modificacion/lista-programas-prosec"
+    },
+    {
+      "id": "37",
+      "departmento": "se",
+      "id_tipo_tramite": "110101",
+      "URL": "https://front.v30.ultrasist.net/se/pantallas/datosdecomponentes"
+    },
+    {
+      "id": "38",
+      "departmento": "se",
+      "id_tipo_tramite": "110102",
+      "URL": "https://front.v30.ultrasist.net/se/exportador-autorizado/registrar-solicitud"
+    },
+    {
+      "id": "39",
+      "departmento": "se",
+      "id_tipo_tramite": "110201",
+      "URL": "https://front.v30.ultrasist.net/se/registro/solicitud"
+    },
+    {
+      "id": "40",
+      "departmento": "se",
+      "id_tipo_tramite": "110202",
+      "URL": "https://front.v30.ultrasist.net/se/certificado-validacion/validacion"
+    },
+    {
+      "id": "41",
+      "departmento": "se",
+      "id_tipo_tramite": "110203",
+      "URL": "https://front.v30.ultrasist.net/se/tecnicos/solicitante"
+    },
+    {
+      "id": "42",
+      "departmento": "se",
+      "id_tipo_tramite": "110204",
+      "URL": "https://front.v30.ultrasist.net/se/pexim/certificado-origen"
+    },
+    {
+      "id": "323",
+      "departmento": "se",
+      "id_tipo_tramite": "110205",
+      "URL": "https://front.v30.ultrasist.net/se/validar-certificado/peru"
+    },
+    {
+      "id": "115",
+      "departmento": "se",
+      "id_tipo_tramite": "110207",
+      "URL": "https://front.v30.ultrasist.net/se/reportes/solicitud"
+    },
+    {
+      "id": "43",
+      "departmento": "se",
+      "id_tipo_tramite": "110208",
+      "URL": "https://front.v30.ultrasist.net/se/validar-inicialmente/certificado-origen"
+    },
+    {
+      "id": "44",
+      "departmento": "se",
+      "id_tipo_tramite": "110209",
+      "URL": "https://front.v30.ultrasist.net/se/certificado-sgp/solicitud"
+    },
+    {
+      "id": "158",
+      "departmento": "se",
+      "id_tipo_tramite": "110210",
+      "URL": "https://front.v30.ultrasist.net/se/tramites-disponibles/solicitud"
+    },
+    {
+      "id": "45",
+      "departmento": "se",
+      "id_tipo_tramite": "110211",
+      "URL": "https://front.v30.ultrasist.net/se/validar-certificado/cam"
+    },
+    {
+      "id": "116",
+      "departmento": "se",
+      "id_tipo_tramite": "110212",
+      "URL": "https://front.v30.ultrasist.net/se/validacion-posteriori/solicitante"
+    },
+    {
+      "id": "117",
+      "departmento": "se",
+      "id_tipo_tramite": "110214",
+      "URL": "https://front.v30.ultrasist.net/se/validar-inicialmente-certificado/solicitante"
+    },
+    {
+      "id": "46",
+      "departmento": "se",
+      "id_tipo_tramite": "110216",
+      "URL": "https://front.v30.ultrasist.net/se/inicialmente-certificado-origen/solicitante"
+    },
+    {
+      "id": "47",
+      "departmento": "se",
+      "id_tipo_tramite": "110217",
+      "URL": "https://front.v30.ultrasist.net/se/certificado-origen/solicitante"
+    },
+    {
+      "id": "48",
+      "departmento": "se",
+      "id_tipo_tramite": "110218",
+      "URL": "https://front.v30.ultrasist.net/se/certificado-tecnico-japon/validar-certificado-tecnico-japon"
+    },
+    {
+      "id": "49",
+      "departmento": "se",
+      "id_tipo_tramite": "110219",
+      "URL": "https://front.v30.ultrasist.net/se/certificado/solicitud"
+    },
+    {
+      "id": "50",
+      "departmento": "se",
+      "id_tipo_tramite": "110221",
+      "URL": "https://front.v30.ultrasist.net/se/validador-certificado-cam"
+    },
+    {
+      "id": "324",
+      "departmento": "se",
+      "id_tipo_tramite": "110222",
+      "URL": "https://front.v30.ultrasist.net/se/validar-certificado-inicialmente/certificado"
+    },
+    {
+      "id": "118",
+      "departmento": "se",
+      "id_tipo_tramite": "110223",
+      "URL": "https://front.v30.ultrasist.net/se/certificado-alianza-posteriori"
+    },
+    {
+      "id": "119",
+      "departmento": "se",
+      "id_tipo_tramite": "120101",
+      "URL": "https://front.v30.ultrasist.net/se/solicitud-de-registro-tpl/pantallas"
+    },
+    {
+      "id": "51",
+      "departmento": "se",
+      "id_tipo_tramite": "120201",
+      "URL": "https://front.v30.ultrasist.net/se/cupos/persona-fisica"
+    },
+    {
+      "id": "120",
+      "departmento": "se",
+      "id_tipo_tramite": "120202",
+      "URL": "https://front.v30.ultrasist.net/se/expedicion-certificado-asignacion/persona-moral"
+    },
+    {
+      "id": "121",
+      "departmento": "se",
+      "id_tipo_tramite": "120203",
+      "URL": "https://front.v30.ultrasist.net/se/expedicion-certificados-ptpd/solicitante"
+    },
+    {
+      "id": "170",
+      "departmento": "se",
+      "id_tipo_tramite": "120204",
+      "URL": "https://front.v30.ultrasist.net/se/expedicion-certificado-cupos/solicitud-expedicion"
+    },
+    {
+      "id": "52",
+      "departmento": "se",
+      "id_tipo_tramite": "120301",
+      "URL": "https://front.v30.ultrasist.net/se/elegibilidad-de-textiles/elegibilidad-textiles"
+    },
+    {
+      "id": "316",
+      "departmento": "se",
+      "id_tipo_tramite": "120401",
+      "URL": "https://front.v30.ultrasist.net/se/asignacion-directa-cupo-personas-fisicas/solicitante"
+    },
+    {
+      "id": "53",
+      "departmento": "se",
+      "id_tipo_tramite": "120402",
+      "URL": "https://front.v30.ultrasist.net/se/asignacion-directa-de-cupo/solicitante"
+    },
+    {
+      "id": "603",
+      "departmento": "se",
+      "id_tipo_tramite": "120403",
+      "URL": "https://front.v30.ultrasist.net/se/cupos/solicitud"
+    },
+    {
+      "id": "54",
+      "departmento": "se",
+      "id_tipo_tramite": "120404",
+      "URL": "https://front.v30.ultrasist.net/se/entidad-legal/soliciante"
+    },
+    {
+      "id": "55",
+      "departmento": "se",
+      "id_tipo_tramite": "120501",
+      "URL": "https://front.v30.ultrasist.net/se/solicitartransferencia/cupos-solicitud-transferencia"
+    },
+    {
+      "id": "56",
+      "departmento": "se",
+      "id_tipo_tramite": "120601",
+      "URL": "https://front.v30.ultrasist.net/se/registro-como-empresa/datos"
+    },
+    {
+      "id": "57",
+      "departmento": "se",
+      "id_tipo_tramite": "120602",
+      "URL": "https://front.v30.ultrasist.net/se/empresa-frontera/datos-empresa"
+    },
+    {
+      "id": "601",
+      "departmento": "se",
+      "id_tipo_tramite": "120603",
+      "URL": "https://front.v30.ultrasist.net/se/registro-como-expresa/registro-empresa"
+    },
+    {
+      "id": "296",
+      "departmento": "se",
+      "id_tipo_tramite": "120702",
+      "URL": "https://front.v30.ultrasist.net/se/expedicion-certificados-frontera/solicitante"
+    },
+    {
+      "id": "58",
+      "departmento": "se",
+      "id_tipo_tramite": "130102",
+      "URL": "https://front.v30.ultrasist.net/se/octava-temporal/solicitante"
+    },
+    {
+      "id": "171",
+      "departmento": "se",
+      "id_tipo_tramite": "130103",
+      "URL": "https://front.v30.ultrasist.net/se/importacion-definitiva/pantallas"
+    },
+    {
+      "id": "247",
+      "departmento": "se",
+      "id_tipo_tramite": "130104",
+      "URL": "https://front.v30.ultrasist.net/se/importacion-otros-vehiculos-usados/solicitud"
+    },
+    {
+      "id": "248",
+      "departmento": "se",
+      "id_tipo_tramite": "130105",
+      "URL": "https://front.v30.ultrasist.net/se/importacion-vehiculos-usados-donacion/solicitud"
+    },
+    {
+      "id": "59",
+      "departmento": "se",
+      "id_tipo_tramite": "130106",
+      "URL": "https://front.v30.ultrasist.net/se/desmantelar/solicitante"
+    },
+    {
+      "id": "310",
+      "departmento": "se",
+      "id_tipo_tramite": "130107",
+      "URL": "https://front.v30.ultrasist.net/se/importaciones-agropecuarias/permisos-de-importacia"
+    },
+    {
+      "id": "166",
+      "departmento": "sener",
+      "id_tipo_tramite": "130108",
+      "URL": "https://front.v30.ultrasist.net/sener/producto-petrolifero/solicitud"
+    },
+    {
+      "id": "126",
+      "departmento": "se",
+      "id_tipo_tramite": "130109",
+      "URL": "https://front.v30.ultrasist.net/se/importacion-de/vehiculos-usados-adaptados"
+    },
+    {
+      "id": "127",
+      "departmento": "se",
+      "id_tipo_tramite": "130110",
+      "URL": "https://front.v30.ultrasist.net/se/importacion/neumaticos-comercializar"
+    },
+    {
+      "id": "60",
+      "departmento": "se",
+      "id_tipo_tramite": "130111",
+      "URL": "https://front.v30.ultrasist.net/se/importacion-de-vehiculos-usados/importacion-de-vehiculos"
+    },
+    {
+      "id": "159",
+      "departmento": "se",
+      "id_tipo_tramite": "130112",
+      "URL": "https://front.v30.ultrasist.net/se/importacion-material-de-investigacion-cientifica"
+    },
+    {
+      "id": "249",
+      "departmento": "se",
+      "id_tipo_tramite": "130113",
+      "URL": "https://front.v30.ultrasist.net/se/importacion/equipo-anticontaminante"
+    },
+    {
+      "id": "160",
+      "departmento": "se",
+      "id_tipo_tramite": "130114",
+      "URL": "https://front.v30.ultrasist.net/se/diamante-bruto/diamante"
+    },
+    {
+      "id": "161",
+      "departmento": "se",
+      "id_tipo_tramite": "130115",
+      "URL": "https://front.v30.ultrasist.net/se/importacion-vehiculos-nuevos/solicitud"
+    },
+    {
+      "id": "250",
+      "departmento": "se",
+      "id_tipo_tramite": "130116",
+      "URL": "https://front.v30.ultrasist.net/se/solicitud-importacion-ambulancia/reconstruccion-reacondicionamiento"
+    },
+    {
+      "id": "61",
+      "departmento": "se",
+      "id_tipo_tramite": "130118",
+      "URL": "https://front.v30.ultrasist.net/se/pexim/solicitud"
+    },
+    {
+      "id": "62",
+      "departmento": "se",
+      "id_tipo_tramite": "130119",
+      "URL": "https://front.v30.ultrasist.net/se/aviso-importacion-maquinas/registrar-solicitud"
+    },
+    {
+      "id": "63",
+      "departmento": "se",
+      "id_tipo_tramite": "130120",
+      "URL": "https://front.v30.ultrasist.net/se/permiso-importacion/intro-permiso"
+    },
+    {
+      "id": "167",
+      "departmento": "sener",
+      "id_tipo_tramite": "130121",
+      "URL": "https://front.v30.ultrasist.net/sener/permiso-de-hidrocarburos/datos"
+    },
+    {
+      "id": "276",
+      "departmento": "sener",
+      "id_tipo_tramite": "130201",
+      "URL": "https://front.v30.ultrasist.net/sener/exportacion-petroliferos/solicitud"
+    },
+    {
+      "id": "64",
+      "departmento": "se",
+      "id_tipo_tramite": "130202",
+      "URL": "https://front.v30.ultrasist.net/se/exportacion-minerales/exportacion-mineralesde-hierro"
+    },
+    {
+      "id": "162",
+      "departmento": "se",
+      "id_tipo_tramite": "130203",
+      "URL": "https://front.v30.ultrasist.net/se/exportar-diamantes/exportacion-de-diamantes-en-bruto"
+    },
+    {
+      "id": "277",
+      "departmento": "sener",
+      "id_tipo_tramite": "130204",
+      "URL": "https://front.v30.ultrasist.net/sener/exportacion-hidrocarburos/solicitud"
+    },
+    {
+      "id": "163",
+      "departmento": "se",
+      "id_tipo_tramite": "130217",
+      "URL": "https://front.v30.ultrasist.net/se/previos-exportacion/control-permisos-previos-exportacion"
+    },
+    {
+      "id": "183",
+      "departmento": "se",
+      "id_tipo_tramite": "130301",
+      "URL": "https://front.v30.ultrasist.net/se/solicitud-prorroga/invocar"
+    },
+    {
+      "id": "297",
+      "departmento": "sener",
+      "id_tipo_tramite": "130302",
+      "URL": "https://front.v30.ultrasist.net/sener/parmiso-importacion-petroleo/pantallas"
+    },
+    {
+      "id": "251",
+      "departmento": "se",
+      "id_tipo_tramite": "130401",
+      "URL": "https://front.v30.ultrasist.net/se/modificacion-descripcion/invocar-modulo"
+    },
+    {
+      "id": "184",
+      "departmento": "se",
+      "id_tipo_tramite": "140101",
+      "URL": "https://front.v30.ultrasist.net/se/solicitud-de-cancelacion/solicitante"
+    },
+    {
+      "id": "318",
+      "departmento": "se",
+      "id_tipo_tramite": "140102",
+      "URL": "https://front.v30.ultrasist.net/se/registro-solicitudModule/pantallas"
+    },
+    {
+      "id": "65",
+      "departmento": "se",
+      "id_tipo_tramite": "140103",
+      "URL": "https://front.v30.ultrasist.net/se/cancelacion-de/solicitante"
+    },
+    {
+      "id": "106",
+      "departmento": "se",
+      "id_tipo_tramite": "140104",
+      "URL": "https://front.v30.ultrasist.net/se/cancelacion-de-certificados-de-cupo/solicitante"
+    },
+    {
+      "id": "66",
+      "departmento": "se",
+      "id_tipo_tramite": "140105",
+      "URL": "https://front.v30.ultrasist.net/se/desistimiento-de-permiso/solicitante"
+    },
+    {
+      "id": "168",
+      "departmento": "sener",
+      "id_tipo_tramite": "140111",
+      "URL": "https://front.v30.ultrasist.net/sener/renuncia-de-derechos-de-permisos/solicitante"
+    },
+    {
+      "id": "169",
+      "departmento": "sener",
+      "id_tipo_tramite": "140112",
+      "URL": "https://front.v30.ultrasist.net/sener/hidrocarburos-de-petroleo/permiso-de-retiro"
+    },
+    {
+      "id": "67",
+      "departmento": "se",
+      "id_tipo_tramite": "140201",
+      "URL": "https://front.v30.ultrasist.net/se/cancelaciones-ministerio/solicitud"
+    },
+    {
+      "id": "623",
+      "departmento": "se",
+      "id_tipo_tramite": "140201",
+      "URL": "https://front.v30.ultrasist.net/se/atender-requerimientos"
+    },
+    {
+      "id": "605",
+      "departmento": "se",
+      "id_tipo_tramite": "140205",
+      "URL": "https://front.v30.ultrasist.net/se/cancelaciones-certificado/solicitud"
+    },
+    {
+      "id": "278",
+      "departmento": "sener",
+      "id_tipo_tramite": "140216",
+      "URL": "https://front.v30.ultrasist.net/sener/pexim/suspension-permiso"
+    },
+    {
+      "id": "298",
+      "departmento": "sener",
+      "id_tipo_tramite": "140218",
+      "URL": "https://front.v30.ultrasist.net/sener/renuncia-de-permiso/solicitud"
+    },
+    {
+      "id": "68",
+      "departmento": "se",
+      "id_tipo_tramite": "150101",
+      "URL": "https://front.v30.ultrasist.net/se/registro-solicitud-anual/solicitud"
+    },
+    {
+      "id": "69",
+      "departmento": "se",
+      "id_tipo_tramite": "150102",
+      "URL": "https://front.v30.ultrasist.net/se/reporte-anual/solicitud"
+    },
+    {
+      "id": "122",
+      "departmento": "se",
+      "id_tipo_tramite": "150103",
+      "URL": "https://front.v30.ultrasist.net/se/informe-anual-programa/solicitud-de-reporte"
+    },
+    {
+      "id": "606",
+      "departmento": "se",
+      "id_tipo_tramite": "190401",
+      "URL": "https://front.v30.ultrasist.net/se/doc-equivalente/iniciar"
+    },
+    {
+      "id": "70",
+      "departmento": "agricultura",
+      "id_tipo_tramite": "220102",
+      "URL": "https://front.v30.ultrasist.net/agricultura/peticion-requisitos-fitosanitarios/invocar-modulo"
+    },
+    {
+      "id": "450",
+      "departmento": "agricultura",
+      "id_tipo_tramite": "220103",
+      "URL": "https://front.v30.ultrasist.net/agricultura/sanidad-acuicola-importacion/solicitud"
+    },
+    {
+      "id": "71",
+      "departmento": "agricultura",
+      "id_tipo_tramite": "220201",
+      "URL": "https://front.v30.ultrasist.net/agricultura/certificado-zoosanitario/registrozoosanitario"
+    },
+    {
+      "id": "72",
+      "departmento": "agricultura",
+      "id_tipo_tramite": "220202",
+      "URL": "https://front.v30.ultrasist.net/agricultura/certificado-fitosanitario/registrofitosanitario"
+    },
+    {
+      "id": "73",
+      "departmento": "agricultura",
+      "id_tipo_tramite": "220203",
+      "URL": "https://front.v30.ultrasist.net/agricultura/importacion-acuacultura/sanidad"
+    },
+    {
+      "id": "74",
+      "departmento": "agricultura",
+      "id_tipo_tramite": "220401",
+      "URL": "https://front.v30.ultrasist.net/agricultura/pantallas-extraordinarios"
+    },
+    {
+      "id": "75",
+      "departmento": "agricultura",
+      "id_tipo_tramite": "220402",
+      "URL": "https://front.v30.ultrasist.net/agricultura/pantallas-captura/solicitud"
+    },
+    {
+      "id": "144",
+      "departmento": "agricultura",
+      "id_tipo_tramite": "220403",
+      "URL": "https://front.v30.ultrasist.net/agricultura/certificado-exportacion/acuicola"
+    },
+    {
+      "id": "76",
+      "departmento": "agricultura",
+      "id_tipo_tramite": "220404",
+      "URL": "https://front.v30.ultrasist.net/agricultura/desistimiento/desistimiento-page"
+    },
+    {
+      "id": "77",
+      "departmento": "agricultura",
+      "id_tipo_tramite": "220501",
+      "URL": "https://front.v30.ultrasist.net/agricultura/sagarpa/datosdelasolicitud"
+    },
+    {
+      "id": "78",
+      "departmento": "agricultura",
+      "id_tipo_tramite": "220502",
+      "URL": "https://front.v30.ultrasist.net/agricultura/inspeccion-fisica/pantallas"
+    },
+    {
+      "id": "124",
+      "departmento": "agricultura",
+      "id_tipo_tramite": "220503",
+      "URL": "https://front.v30.ultrasist.net/agricultura/sanidadacuicola/certificado"
+    },
+    {
+      "id": "79",
+      "departmento": "agricultura",
+      "id_tipo_tramite": "220701",
+      "URL": "https://front.v30.ultrasist.net/agricultura/inspeccion-fisica/inspeccion-fisica-zoosanitario"
+    },
+    {
+      "id": "80",
+      "departmento": "agricultura",
+      "id_tipo_tramite": "220702",
+      "URL": "https://front.v30.ultrasist.net/agricultura/inspeccion-fitosanitario/fitosanitario"
+    },
+    {
+      "id": "81",
+      "departmento": "agricultura",
+      "id_tipo_tramite": "220703",
+      "URL": "https://front.v30.ultrasist.net/agricultura/acuicola-fisica/acuicola"
+    },
+    {
+      "id": "125",
+      "departmento": "agricultura",
+      "id_tipo_tramite": "221601",
+      "URL": "https://front.v30.ultrasist.net/agricultura/zoosanitario/solicitante"
+    },
+    {
+      "id": "175",
+      "departmento": "agricultura",
+      "id_tipo_tramite": "221602",
+      "URL": "https://front.v30.ultrasist.net/agricultura/fitosanitario/solicitante"
+    },
+    {
+      "id": "208",
+      "departmento": "agricultura",
+      "id_tipo_tramite": "221603",
+      "URL": "https://front.v30.ultrasist.net/agricultura/sanidad/solicitante"
+    },
+    {
+      "id": "82",
+      "departmento": "semarnat",
+      "id_tipo_tramite": "230101",
+      "URL": "https://front.v30.ultrasist.net/semarnat/tramites-disponibles/solicitud"
+    },
+    {
+      "id": "272",
+      "departmento": "semarnat",
+      "id_tipo_tramite": "230201",
+      "URL": "https://front.v30.ultrasist.net/semarnat/phytosanitary-export/solicitud"
+    },
+    {
+      "id": "273",
+      "departmento": "semarnat",
+      "id_tipo_tramite": "230202",
+      "URL": "https://front.v30.ultrasist.net/semarnat/phytosanitary-rexportation/solicitud"
+    },
+    {
+      "id": "274",
+      "departmento": "semarnat",
+      "id_tipo_tramite": "230301",
+      "URL": "https://front.v30.ultrasist.net/semarnat/desistimiento/solicitud"
+    },
+    {
+      "id": "83",
+      "departmento": "semarnat",
+      "id_tipo_tramite": "230401",
+      "URL": "https://front.v30.ultrasist.net/semarnat/pantallas/action"
+    },
+    {
+      "id": "275",
+      "departmento": "semarnat",
+      "id_tipo_tramite": "230501",
+      "URL": "https://front.v30.ultrasist.net/semarnat/materiales-peligrosos/solicitud"
+    },
+    {
+      "id": "164",
+      "departmento": "semarnat",
+      "id_tipo_tramite": "230901",
+      "URL": "https://front.v30.ultrasist.net/semarnat/autorizaciones-de-vida-silvestre/datos"
+    },
+    {
+      "id": "165",
+      "departmento": "semarnat",
+      "id_tipo_tramite": "230902",
+      "URL": "https://front.v30.ultrasist.net/semarnat/tramites-cites-importacion-exportacion-reexportacion/datos"
+    },
+    {
+      "id": "84",
+      "departmento": "semarnat",
+      "id_tipo_tramite": "231001",
+      "URL": "https://front.v30.ultrasist.net/semarnat/aviso-de-materiales/datos"
+    },
+    {
+      "id": "602",
+      "departmento": "semarnat",
+      "id_tipo_tramite": "231002",
+      "URL": "https://front.v30.ultrasist.net/semarnat/aviso-retorno/primera-subsecuente"
+    },
+    {
+      "id": "185",
+      "departmento": "semarnat",
+      "id_tipo_tramite": "231003",
+      "URL": "https://front.v30.ultrasist.net/semarnat/aviso-de-reciclaje/datos"
+    },
+    {
+      "id": "252",
+      "departmento": "sedena",
+      "id_tipo_tramite": "240101",
+      "URL": "https://front.v30.ultrasist.net/sedena/permiso-ordinario-importacion-armas-municiones/contenedor-de-pasos"
+    },
+    {
+      "id": "253",
+      "departmento": "sedena",
+      "id_tipo_tramite": "240102",
+      "URL": "https://front.v30.ultrasist.net/sedena/permiso-extraordinario-importacion-armamento-fisicas-morales/contenedor-de-pasos"
+    },
+    {
+      "id": "254",
+      "departmento": "sedena",
+      "id_tipo_tramite": "240105",
+      "URL": "https://front.v30.ultrasist.net/sedena/importacion-de-sustancias/ordinario-para"
+    },
+    {
+      "id": "255",
+      "departmento": "sedena",
+      "id_tipo_tramite": "240106",
+      "URL": "https://front.v30.ultrasist.net/sedena/aviso-importacion-sustancias-quimicas/contenedor-de-pasos"
+    },
+    {
+      "id": "256",
+      "departmento": "sedena",
+      "id_tipo_tramite": "240107",
+      "URL": "https://front.v30.ultrasist.net/sedena/sustancias-quimicas/solicitud"
+    },
+    {
+      "id": "257",
+      "departmento": "sedena",
+      "id_tipo_tramite": "240108",
+      "URL": "https://front.v30.ultrasist.net/sedena/permiso-ordinario-importacion-material/contenedor-de-pasos"
+    },
+    {
+      "id": "258",
+      "departmento": "sedena",
+      "id_tipo_tramite": "240111",
+      "URL": "https://front.v30.ultrasist.net/sedena/importacion-de-material-explosivo/ordinario-para"
+    },
+    {
+      "id": "541",
+      "departmento": "sedena",
+      "id_tipo_tramite": "240112",
+      "URL": "https://front.v30.ultrasist.net/sedena/agregar/destinatario"
+    },
+    {
+      "id": "259",
+      "departmento": "sedena",
+      "id_tipo_tramite": "240114",
+      "URL": "https://front.v30.ultrasist.net/sedena/armas-municiones-para-la-gente/contenedor-de-pasos"
+    },
+    {
+      "id": "260",
+      "departmento": "sedena",
+      "id_tipo_tramite": "240117",
+      "URL": "https://front.v30.ultrasist.net/sedena/permiso-ordinario-exportacion-de-sustancias-quimicas/contenedor-de-pasos"
+    },
+    {
+      "id": "261",
+      "departmento": "sedena",
+      "id_tipo_tramite": "240118",
+      "URL": "https://front.v30.ultrasist.net/sedena/permiso-extraordinario-para-la-exportacion-de-sustancias-quimicas/contenedor-de-pasos"
+    },
+    {
+      "id": "262",
+      "departmento": "sedena",
+      "id_tipo_tramite": "240119",
+      "URL": "https://front.v30.ultrasist.net/sedena/artefactos-pirotecnicos-ordinarios/contenedor-de-pasos"
+    },
+    {
+      "id": "263",
+      "departmento": "sedena",
+      "id_tipo_tramite": "240120",
+      "URL": "https://front.v30.ultrasist.net/sedena/permiso-exportacion-pirotecnia/contenedor-de-pasos"
+    },
+    {
+      "id": "264",
+      "departmento": "sedena",
+      "id_tipo_tramite": "240121",
+      "URL": "https://front.v30.ultrasist.net/sedena/permiso-ordinario-exportacion-explosivo/permiso-exportacion-explosivo"
+    },
+    {
+      "id": "265",
+      "departmento": "sedena",
+      "id_tipo_tramite": "240122",
+      "URL": "https://front.v30.ultrasist.net/sedena/permiso-extraordinario-exportacion-explosivo/contenedor-de-pasos"
+    },
+    {
+      "id": "311",
+      "departmento": "sedena",
+      "id_tipo_tramite": "240123",
+      "URL": "https://front.v30.ultrasist.net/sedena/aviso-de-exportacion/contenedor-de-pasos"
+    },
+    {
+      "id": "266",
+      "departmento": "sedena",
+      "id_tipo_tramite": "240305",
+      "URL": "https://front.v30.ultrasist.net/sedena/permiso-ordinario-importacion-substancias-quimicas/permiso-ordinario-importacion"
+    },
+    {
+      "id": "267",
+      "departmento": "sedena",
+      "id_tipo_tramite": "240308",
+      "URL": "https://front.v30.ultrasist.net/sedena/permiso-ordinario/importacion-de-artificios"
+    },
+    {
+      "id": "268",
+      "departmento": "sedena",
+      "id_tipo_tramite": "240311",
+      "URL": "https://front.v30.ultrasist.net/sedena/permiso-ordinario/importacion-artificios"
+    },
+    {
+      "id": "560",
+      "departmento": "sedena",
+      "id_tipo_tramite": "240321",
+      "URL": "https://front.v30.ultrasist.net/sedena/modificacion-exportacion/contenedor-de-pasos"
+    },
+    {
+      "id": "269",
+      "departmento": "sedena",
+      "id_tipo_tramite": "240405",
+      "URL": "https://front.v30.ultrasist.net/sedena/permiso-ordinario-importacion-sustancias-quimicas/contenedor-de-pasos"
+    },
+    {
+      "id": "270",
+      "departmento": "sedena",
+      "id_tipo_tramite": "240407",
+      "URL": "https://front.v30.ultrasist.net/sedena/solicitud-prorroga-aviso-importacion/importacion-de-sustancias-quimicas"
+    },
+    {
+      "id": "271",
+      "departmento": "sedena",
+      "id_tipo_tramite": "240411",
+      "URL": "https://front.v30.ultrasist.net/sedena/permiso-ordinario-prorroga-importacion-material-explosivo/contenedor-de-pasos"
+    },
+    {
+      "id": "244",
+      "departmento": "profepa",
+      "id_tipo_tramite": "250101",
+      "URL": "https://front.v30.ultrasist.net/profepa/flora-fauna/solictud"
+    },
+    {
+      "id": "491",
+      "departmento": "profepa",
+      "id_tipo_tramite": "250102",
+      "URL": "https://front.v30.ultrasist.net/profepa/flora-fauna-silvestre/solictud/"
+    },
+    {
+      "id": "492",
+      "departmento": "profepa",
+      "id_tipo_tramite": "250103",
+      "URL": "https://front.v30.ultrasist.net/profepa/embalaje-de-madera/solictud"
+    },
+    {
+      "id": "85",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260101",
+      "URL": "https://front.v30.ultrasist.net/cofepris/importacion-productos/contenedor-de-pasos"
+    },
+    {
+      "id": "145",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260102",
+      "URL": "https://front.v30.ultrasist.net/cofepris/consumo-personal/solicitud"
+    },
+    {
+      "id": "209",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260103",
+      "URL": "https://front.v30.ultrasist.net/cofepris/importacion-retorno-sanitario/contenedor-de-pasos"
+    },
+    {
+      "id": "317",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260104",
+      "URL": "https://front.v30.ultrasist.net/cofepris/permiso-sanitario-productos/solicitud"
+    },
+    {
+      "id": "210",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260201",
+      "URL": "https://front.v30.ultrasist.net/cofepris/importacion-psicotropicos-poretorno/contenedor-de-pasos"
+    },
+    {
+      "id": "599",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260202",
+      "URL": "https://front.v30.ultrasist.net/cofepris/importacion-materias-primas"
+    },
+    {
+      "id": "86",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260203",
+      "URL": "https://front.v30.ultrasist.net/cofepris/medicamentos-registro-sanitario/solicitud"
+    },
+    {
+      "id": "107",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260204",
+      "URL": "https://front.v30.ultrasist.net/cofepris/permiso-sanitario-importacion-medicamentos/solicitud"
+    },
+    {
+      "id": "87",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260205",
+      "URL": "https://front.v30.ultrasist.net/cofepris/materias-primas-destinados/solicitud"
+    },
+    {
+      "id": "146",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260206",
+      "URL": "https://front.v30.ultrasist.net/cofepris/maquila-materias-primas/solicitud"
+    },
+    {
+      "id": "211",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260207",
+      "URL": "https://front.v30.ultrasist.net/cofepris/importacion-tratamientos-especiales/contenedor-de-pasos"
+    },
+    {
+      "id": "212",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260208",
+      "URL": "https://front.v30.ultrasist.net/cofepris/medicamentos-destinados-uso/contenedor-de-pasos"
+    },
+    {
+      "id": "213",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260209",
+      "URL": "https://front.v30.ultrasist.net/cofepris/importacion-destinados-donacio/contenedor-de-pasos"
+    },
+    {
+      "id": "108",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260210",
+      "URL": "https://front.v30.ultrasist.net/cofepris/permiso-sanitario-importacion-medicamentos-pruebas"
+    },
+    {
+      "id": "88",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260211",
+      "URL": "https://front.v30.ultrasist.net/cofepris/permiso-sanitario/pantallas"
+    },
+    {
+      "id": "89",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260212",
+      "URL": "https://front.v30.ultrasist.net/cofepris/permiso-maquila/solictud"
+    },
+    {
+      "id": "147",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260213",
+      "URL": "https://front.v30.ultrasist.net/cofepris/permiso-sanitario-medicos-uso-personal/contenedor-de-pasos"
+    },
+    {
+      "id": "90",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260214",
+      "URL": "https://front.v30.ultrasist.net/cofepris/importacion-dispositivos-medicos-uso/contenedor-de-pasos"
+    },
+    {
+      "id": "91",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260215",
+      "URL": "https://front.v30.ultrasist.net/cofepris/permiso-sanitario-importacion/sanitario"
+    },
+    {
+      "id": "92",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260216",
+      "URL": "https://front.v30.ultrasist.net/cofepris/importacion-dispositivos-medicos-donacion/contenedor-de-pasos"
+    },
+    {
+      "id": "148",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260217",
+      "URL": "https://front.v30.ultrasist.net/cofepris/dispositivos-medicos-sin-registrar/contenedor-de-pasos"
+    },
+    {
+      "id": "149",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260218",
+      "URL": "https://front.v30.ultrasist.net/cofepris/dispositivos-medicos-laboratorio/contenedor-de-pasos"
+    },
+    {
+      "id": "214",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260219",
+      "URL": "https://front.v30.ultrasist.net/cofepris/importacion-remedios-herbolarios/contenedor-de-pasos"
+    },
+    {
+      "id": "150",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260301",
+      "URL": "https://front.v30.ultrasist.net/cofepris/importacion-materias-primas-estupefacientes/contenedor-de-pasos"
+    },
+    {
+      "id": "215",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260302",
+      "URL": "https://front.v30.ultrasist.net/cofepris/exportacion-materias-primas-estupefacientes/contenedor-de-pasos"
+    },
+    {
+      "id": "151",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260303",
+      "URL": "https://front.v30.ultrasist.net/cofepris/importacion-psicotropicos/registrarIPM"
+    },
+    {
+      "id": "216",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260304",
+      "URL": "https://front.v30.ultrasist.net/cofepris/exportacion-medicamentos-contengan/contenedor-de-pasos"
+    },
+    {
+      "id": "93",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260401",
+      "URL": "https://front.v30.ultrasist.net/cofepris/territorio-nacional/solicitante"
+    },
+    {
+      "id": "94",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260402",
+      "URL": "https://front.v30.ultrasist.net/cofepris/permiso-importacion-biologica/solictud"
+    },
+    {
+      "id": "95",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260501",
+      "URL": "https://front.v30.ultrasist.net/cofepris/permiso-plaguicidas/plaguicidas"
+    },
+    {
+      "id": "96",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260502",
+      "URL": "https://front.v30.ultrasist.net/cofepris/muestras-plaguicidas/plaguicidas"
+    },
+    {
+      "id": "97",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260503",
+      "URL": "https://front.v30.ultrasist.net/cofepris/permiso-experimentales-plaguicidas/plaguicidas"
+    },
+    {
+      "id": "217",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260504",
+      "URL": "https://front.v30.ultrasist.net/cofepris/permiso-sujetos/plaguicidas"
+    },
+    {
+      "id": "218",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260505",
+      "URL": "https://front.v30.ultrasist.net/cofepris/permiso-transformacion-maquila/plaguicidas"
+    },
+    {
+      "id": "452",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260507",
+      "URL": "https://front.v30.ultrasist.net/cofepris/importacion-plafest/solicitud"
+    },
+    {
+      "id": "219",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260508",
+      "URL": "https://front.v30.ultrasist.net/cofepris/permiso-nutrientes/plaguicidas"
+    },
+    {
+      "id": "220",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260509",
+      "URL": "https://front.v30.ultrasist.net/cofepris/permiso-vegetales-nutrientes/plaguicidas"
+    },
+    {
+      "id": "221",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260510",
+      "URL": "https://front.v30.ultrasist.net/cofepris/permiso-pruebas-nutrientes/plaguicidas"
+    },
+    {
+      "id": "222",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260511",
+      "URL": "https://front.v30.ultrasist.net/cofepris/permiso-nutrientes-exportacion/plaguicidas"
+    },
+    {
+      "id": "152",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260512",
+      "URL": "https://front.v30.ultrasist.net/cofepris/permiso-de-importacion/pantallaspage"
+    },
+    {
+      "id": "223",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260513",
+      "URL": "https://front.v30.ultrasist.net/cofepris/muestras-de-toxicos/plaguicidas"
+    },
+    {
+      "id": "153",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260514",
+      "URL": "https://front.v30.ultrasist.net/cofepris/permiso-importacion-calidad/pantallas"
+    },
+    {
+      "id": "224",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260515",
+      "URL": "https://front.v30.ultrasist.net/cofepris/sustancias-permitidas"
+    },
+    {
+      "id": "225",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260516",
+      "URL": "https://front.v30.ultrasist.net/cofepris/operacion-de-maquila-submaquila/plaguicidas"
+    },
+    {
+      "id": "98",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260601",
+      "URL": "https://front.v30.ultrasist.net/cofepris/aviso-sanitario/datos-de-la-solicitud"
+    },
+    {
+      "id": "99",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260603",
+      "URL": "https://front.v30.ultrasist.net/cofepris/aviso-de-importacion/SolicitudePage"
+    },
+    {
+      "id": "100",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260604",
+      "URL": "https://front.v30.ultrasist.net/cofepris/aviso-exportacion/pantallas"
+    },
+    {
+      "id": "101",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260605",
+      "URL": "https://front.v30.ultrasist.net/cofepris/aviso-de-modificacion-module/datos-de-la-solicitud"
+    },
+    {
+      "id": "102",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260701",
+      "URL": "https://front.v30.ultrasist.net/cofepris/permiso-certificados/registrarSolicitudIP"
+    },
+    {
+      "id": "176",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260702",
+      "URL": "https://front.v30.ultrasist.net/cofepris/registrar-solicitud-mcp/registro"
+    },
+    {
+      "id": "226",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260703",
+      "URL": "https://front.v30.ultrasist.net/cofepris/solicitud-permiso/datos"
+    },
+    {
+      "id": "177",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260704",
+      "URL": "https://front.v30.ultrasist.net/cofepris/consulta/solicitud"
+    },
+    {
+      "id": "227",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260901",
+      "URL": "https://front.v30.ultrasist.net/cofepris/modificacion-permiso-sanitario-la-salud/solicitante"
+    },
+    {
+      "id": "154",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260902",
+      "URL": "https://front.v30.ultrasist.net/cofepris/modificacion-permiso-sanitario/solicitante"
+    },
+    {
+      "id": "155",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260903",
+      "URL": "https://front.v30.ultrasist.net/cofepris/actualizacion-importacion/solictud"
+    },
+    {
+      "id": "109",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260904",
+      "URL": "https://front.v30.ultrasist.net/cofepris/modificacion-del-permiso-sanitario-de-importacion-de-insumos/sanitary-permit"
+    },
+    {
+      "id": "228",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260905",
+      "URL": "https://front.v30.ultrasist.net/cofepris/enmienda-permiso-sanitario/solictud"
+    },
+    {
+      "id": "178",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260906",
+      "URL": "https://front.v30.ultrasist.net/cofepris/modificacion-permiso-sanitario-importacion-maquila"
+    },
+    {
+      "id": "229",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260907",
+      "URL": "https://front.v30.ultrasist.net/cofepris/modificacion-permiso-importacion-tratamientos/solicitante"
+    },
+    {
+      "id": "230",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260908",
+      "URL": "https://front.v30.ultrasist.net/cofepris/modificacion-permiso-meds-uso/solicitante"
+    },
+    {
+      "id": "231",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260909",
+      "URL": "https://front.v30.ultrasist.net/cofepris/medicamentos-donacion/solicitante"
+    },
+    {
+      "id": "179",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260910",
+      "URL": "https://front.v30.ultrasist.net/cofepris/modificacion-al-permiso-sanitario/solicitante"
+    },
+    {
+      "id": "110",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260911",
+      "URL": "https://front.v30.ultrasist.net/cofepris/modificacion-de-dispositivos/permiso-sanitario"
+    },
+    {
+      "id": "111",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260912",
+      "URL": "https://front.v30.ultrasist.net/cofepris/mod-permiso-importacion/permiso-sanitario"
+    },
+    {
+      "id": "232",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260913",
+      "URL": "https://front.v30.ultrasist.net/cofepris/modificacion-del-permiso/pantallas"
+    },
+    {
+      "id": "233",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260914",
+      "URL": "https://front.v30.ultrasist.net/cofepris/importacion-de-insumos/pantallas"
+    },
+    {
+      "id": "180",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260915",
+      "URL": "https://front.v30.ultrasist.net/cofepris/permiso-sanitario-dispositivos-medicos/permiso-sanitario-dispositivos-medicos"
+    },
+    {
+      "id": "234",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260916",
+      "URL": "https://front.v30.ultrasist.net/cofepris/importar-suministros-medicos/solictud"
+    },
+    {
+      "id": "235",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260917",
+      "URL": "https://front.v30.ultrasist.net/cofepris/permiso-importacion-module/modificacion-permiso"
+    },
+    {
+      "id": "181",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260918",
+      "URL": "https://front.v30.ultrasist.net/cofepris/modificacion-permiso-lab/modificacion-permiso-lab"
+    },
+    {
+      "id": "459",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "260919",
+      "URL": "https://front.v30.ultrasist.net/cofepris/importar-de-remedios-herbals/permiso-remedios-herbals"
+    },
+    {
+      "id": "236",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "261101",
+      "URL": "https://front.v30.ultrasist.net/cofepris/solicitud-modificacion"
+    },
+    {
+      "id": "237",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "261103",
+      "URL": "https://front.v30.ultrasist.net/cofepris/modificacion-permiso-importacion-medicamentos/modificacion-permiso-importacion-medicamentos"
+    },
+    {
+      "id": "238",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "261401",
+      "URL": "https://front.v30.ultrasist.net/cofepris/solicitud-modificacion-permiso-salida-territorio/solicitud"
+    },
+    {
+      "id": "239",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "261402",
+      "URL": "https://front.v30.ultrasist.net/cofepris/solicitud-modificacion-permiso-internacion/solicitud"
+    },
+    {
+      "id": "182",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "261601",
+      "URL": "https://front.v30.ultrasist.net/cofepris/correccion-interna-de-la-cofepris/correccion-interna-de-la-cofepris"
+    },
+    {
+      "id": "240",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "261701",
+      "URL": "https://front.v30.ultrasist.net/cofepris/cancelacion-peticion/pantallas"
+    },
+    {
+      "id": "156",
+      "departmento": "cofepris",
+      "id_tipo_tramite": "261702",
+      "URL": "https://front.v30.ultrasist.net/cofepris/retiros-cofepris/pantallas"
+    },
+    {
+      "id": "242",
+      "departmento": "inbal",
+      "id_tipo_tramite": "270101",
+      "URL": "https://front.v30.ultrasist.net/inbal/informacion-arte-exportar/pantallas"
+    },
+    {
+      "id": "157",
+      "departmento": "inbal",
+      "id_tipo_tramite": "270201",
+      "URL": "https://front.v30.ultrasist.net/inbal/aviso-siglos/solicitud"
+    },
+    {
+      "id": "243",
+      "departmento": "inbal",
+      "id_tipo_tramite": "270301",
+      "URL": "https://front.v30.ultrasist.net/inbal/aviso-importacion-plastica/Pantallas"
+    },
+    {
+      "id": "241",
+      "departmento": "inah",
+      "id_tipo_tramite": "280101",
+      "URL": "https://front.v30.ultrasist.net/inah/permiso-de-exportacion/permiso"
+    },
+    {
+      "id": "103",
+      "departmento": "amecafe",
+      "id_tipo_tramite": "290101",
+      "URL": "https://front.v30.ultrasist.net/amecafe/cafe-exportadores/cafe-exportadores"
+    },
+    {
+      "id": "104",
+      "departmento": "amecafe",
+      "id_tipo_tramite": "290201",
+      "URL": "https://front.v30.ultrasist.net/amecafe/registrar-solicitud/solicitud"
+    },
+    {
+      "id": "284",
+      "departmento": "amecafe",
+      "id_tipo_tramite": "290301",
+      "URL": "https://front.v30.ultrasist.net/amecafe/nacional-registro-del-cafe-exportadores/cafeExportadores"
+    },
+    {
+      "id": "279",
+      "departmento": "sener",
+      "id_tipo_tramite": "300105",
+      "URL": "https://front.v30.ultrasist.net/sener/autorizacion-de-rayos-x/solicitud"
+    },
+    {
+      "id": "407",
+      "departmento": "aga",
+      "id_tipo_tramite": "420101",
+      "URL": "https://front.v30.ultrasist.net/aga/registrar-proveedores/solicitud"
+    },
+    {
+      "id": "313",
+      "departmento": "aga",
+      "id_tipo_tramite": "420102",
+      "URL": "https://front.v30.ultrasist.net/aga/concluir-relacion-de/solicitud"
+    },
+    {
+      "id": "282",
+      "departmento": "aga",
+      "id_tipo_tramite": "420103",
+      "URL": "https://front.v30.ultrasist.net/aga/concluir-relacion/solicitud"
+    },
+    {
+      "id": "105",
+      "departmento": "aga",
+      "id_tipo_tramite": "570101",
+      "URL": "https://front.v30.ultrasist.net/aga/cancelacion-servicios-extraordinarios/cancelacion-extraordinarios"
+    },
+    {
+      "id": "134",
+      "departmento": "aga",
+      "id_tipo_tramite": "570102",
+      "URL": "https://front.v30.ultrasist.net/aga/registro-solicitud/solicitud"
+    },
+    {
+      "id": "418",
+      "departmento": "aga",
+      "id_tipo_tramite": "630103",
+      "URL": "https://front.v30.ultrasist.net/aga/autorizacion-importacion-temporal/solicitud"
+    },
+    {
+      "id": "195",
+      "departmento": "aga",
+      "id_tipo_tramite": "630104",
+      "URL": "https://front.v30.ultrasist.net/aga/equipo-e-instrumentos-musicales/solicitud"
+    },
+    {
+      "id": "196",
+      "departmento": "aga",
+      "id_tipo_tramite": "630303",
+      "URL": "https://front.v30.ultrasist.net/aga/retorno-importacion-temporal/solicitud"
+    },
+    {
+      "id": "197",
+      "departmento": "aga",
+      "id_tipo_tramite": "630307",
+      "URL": "https://front.v30.ultrasist.net/aga/aeronaves-en-retorno-temporal/solicitud"
+    },
+    {
+      "id": "433",
+      "departmento": "aga",
+      "id_tipo_tramite": "640102",
+      "URL": "https://front.v30.ultrasist.net/aga/mantenimiento-marinas/solicitante"
+    },
+    {
+      "id": "598",
+      "departmento": "stps",
+      "id_tipo_tramite": "680101",
+      "URL": "https://front.v30.ultrasist.net/stps/restriccion-importacion-trabajo-forzoso"
+    }
+  ]
