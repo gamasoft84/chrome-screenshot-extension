@@ -35,17 +35,24 @@ chrome.storage.local.get('captureMode', (data) => {
 
 function loadHotkeyDisplay() {
   chrome.commands.getAll((commands) => {
-    const cmd = commands.find(c => c.name === 'capture-screenshot');
-    const badge = document.getElementById('hotkeyBadge');
-    if (cmd && cmd.shortcut) {
-      const keys = cmd.shortcut.split('+');
-      badge.innerHTML = keys.map((k, i) =>
-        `<span class="key">${k}</span>${i < keys.length - 1 ? '<span class="key-sep">+</span>' : ''}`
-      ).join('');
-    } else {
-      badge.innerHTML = '<span style="font-size:11px;color:#555;">Sin asignar</span>';
-    }
+    const captureCmd = commands.find(c => c.name === 'capture-screenshot');
+    const regionCmd = commands.find(c => c.name === 'capture-region');
+
+    renderHotkeyBadge(document.getElementById('hotkeyBadgeCapture'), captureCmd?.shortcut);
+    renderHotkeyBadge(document.getElementById('hotkeyBadgeRegion'), regionCmd?.shortcut);
   });
+}
+
+function renderHotkeyBadge(badgeEl, shortcut) {
+  if (!badgeEl) return;
+  if (shortcut) {
+    const keys = shortcut.split('+');
+    badgeEl.innerHTML = keys.map((k, i) =>
+      `<span class="key">${k}</span>${i < keys.length - 1 ? '<span class="key-sep">+</span>' : ''}`
+    ).join('');
+  } else {
+    badgeEl.innerHTML = '<span style="font-size:11px;color:#555;">Sin asignar</span>';
+  }
 }
 
 // Botón para ir a la página de atajos de Chrome

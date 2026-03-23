@@ -15,14 +15,18 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 // Stores pending region capture callbacks keyed by tabId
 const pendingRegion = {};
 
+function startRegionCapture(tabId, windowId, url) {
+  // Inject selector into page
+  chrome.scripting.executeScript({ target: { tabId }, files: ['region_selector.js'] })
+    .catch(() => {});
+  // Store callback - will be resolved when regionSelected arrives
+  pendingRegion[tabId] = { windowId, url };
+}
+
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === 'startRegionCapture') {
     const { tabId, windowId, url } = message;
-    // Inject selector into page
-    chrome.scripting.executeScript({ target: { tabId }, files: ['region_selector.js'] })
-      .catch(() => {});
-    // Store callback - will be resolved when regionSelected arrives
-    pendingRegion[tabId] = { windowId, url };
+    startRegionCapture(tabId, windowId, url);
     sendResponse({ ok: true });
     return true;
   }
@@ -78,9 +82,15 @@ async function captureRegion(tabId, windowId, pageUrl, region) {
 
 // ─── Hotkey Ctrl+Shift+S ──────────────────────────────────────────────────────
 chrome.commands.onCommand.addListener(async (command) => {
-  if (command !== 'capture-screenshot') return;
   const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
   if (!tab) return;
+
+  if (command === 'capture-region') {
+    startRegionCapture(tab.id, tab.windowId, tab.url);
+    return;
+  }
+
+  if (command !== 'capture-screenshot') return;
   const { captureMode = 'full' } = await chrome.storage.local.get('captureMode');
   const result = await handleCapture(tab.id, tab.windowId, tab.url, captureMode);
   chrome.scripting.executeScript({

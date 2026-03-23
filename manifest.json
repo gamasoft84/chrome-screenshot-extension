@@ -41,6 +41,13 @@
         "mac": "Command+Shift+S"
       },
       "description": "Capturar screenshot de la página actual"
+    },
+    "capture-region": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Y",
+        "mac": "Command+Shift+Y"
+      },
+      "description": "Seleccionar región y guardar captura"
     }
   },
   "background": {
