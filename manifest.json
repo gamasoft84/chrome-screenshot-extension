@@ -28,12 +28,6 @@
       "run_at": "document_idle"
     }
   ],
-  "web_accessible_resources": [
-    {
-      "resources": ["region_selector.js"],
-      "matches": ["<all_urls>"]
-    }
-  ],
   "commands": {
     "capture-screenshot": {
       "suggested_key": {

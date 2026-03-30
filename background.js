@@ -1,5 +1,19 @@
 // background.js - Service Worker
 
+let capturePipelineBusy = false;
+
+async function runExclusiveCapture(fn) {
+  if (capturePipelineBusy) {
+    throw new Error('Ya hay una captura en curso; espera a que termine.');
+  }
+  capturePipelineBusy = true;
+  try {
+    return await fn();
+  } finally {
+    capturePipelineBusy = false;
+  }
+}
+
 // ─── Mensajes desde el popup ──────────────────────────────────────────────────
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === 'capture') {
@@ -41,46 +55,49 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
     captureRegion(tabId, pending.windowId, pending.url, message.region)
       .then(result => {
-        // Notify popup via storage (popup may be closed)
         chrome.storage.session.set({ lastCapture: result });
       })
-      .catch(err => console.error('[Region capture]', err));
+      .catch(err => {
+        console.error('[Region capture]', err);
+        chrome.storage.session.set({
+          lastCapture: { success: false, error: err.message || 'Error en región' }
+        });
+      });
   }
 });
 
 async function captureRegion(tabId, windowId, pageUrl, region) {
-  const { x, y, width, height, dpr } = region;
+  return runExclusiveCapture(async () => {
+    const { x, y, width, height, dpr } = region;
 
-  // Capture what's currently visible
-  const dataUrl = await chrome.tabs.captureVisibleTab(windowId, { format: 'png' });
-  const img     = await dataUrlToImageBitmap(dataUrl);
+    const dataUrl = await chrome.tabs.captureVisibleTab(windowId, { format: 'png' });
+    const img     = await dataUrlToImageBitmap(dataUrl);
 
-  // Crop to selected region (region coords are already in CSS pixels relative to viewport)
-  const cropX = Math.round(x      * dpr);
-  const cropY = Math.round(y      * dpr);
-  const cropW = Math.round(width  * dpr);
-  const cropH = Math.round(height * dpr);
+    const cropX = Math.round(x      * dpr);
+    const cropY = Math.round(y      * dpr);
+    const cropW = Math.round(width  * dpr);
+    const cropH = Math.round(height * dpr);
 
-  const canvas = new OffscreenCanvas(cropW, cropH);
-  const ctx    = canvas.getContext('2d');
-  ctx.drawImage(img, cropX, cropY, cropW, cropH, 0, 0, cropW, cropH);
-  img.close();
+    const canvas = new OffscreenCanvas(cropW, cropH);
+    const ctx    = canvas.getContext('2d');
+    ctx.drawImage(img, cropX, cropY, cropW, cropH, 0, 0, cropW, cropH);
+    img.close();
 
-  const processedDataUrl = await applyCaptureTreatmentIfEnabled(
-    await blobToBase64(await canvas.convertToBlob({ type: 'image/png' })),
-    pageUrl
-  );
+    const processedDataUrl = await applyCaptureTreatmentIfEnabled(
+      await blobToBase64(await canvas.convertToBlob({ type: 'image/png' }))
+    );
 
-  const filename = await generateFilename(pageUrl);
+    const filename = await generateFilename(pageUrl);
 
-  await chrome.downloads.download({
-    url: processedDataUrl,
-    filename: `screenshots/${filename}`,
-    saveAs: false,
-    conflictAction: 'uniquify'
+    await chrome.downloads.download({
+      url: processedDataUrl,
+      filename: `screenshots/${filename}`,
+      saveAs: false,
+      conflictAction: 'uniquify'
+    });
+
+    return { success: true, filename };
   });
-
-  return { success: true, filename };
 }
 
 // ─── Hotkey Ctrl+Shift+S ──────────────────────────────────────────────────────
@@ -95,44 +112,52 @@ chrome.commands.onCommand.addListener(async (command) => {
 
   if (command !== 'capture-screenshot') return;
   const { captureMode = 'full' } = await chrome.storage.local.get('captureMode');
-  const result = await handleCapture(tab.id, tab.windowId, tab.url, captureMode);
-  chrome.scripting.executeScript({
-    target: { tabId: tab.id },
-    func: showPageToast,
-    args: [result.success, result.filename || result.error || '']
-  }).catch(() => {});
+  try {
+    const result = await handleCapture(tab.id, tab.windowId, tab.url, captureMode);
+    chrome.scripting.executeScript({
+      target: { tabId: tab.id },
+      func: showPageToast,
+      args: [result.success, result.filename || result.error || '']
+    }).catch(() => {});
+  } catch (e) {
+    chrome.scripting.executeScript({
+      target: { tabId: tab.id },
+      func: showPageToast,
+      args: [false, e.message || 'Error al capturar']
+    }).catch(() => {});
+  }
 });
 
 // ─── Lógica principal ─────────────────────────────────────────────────────────
 async function handleCapture(tabId, windowId, pageUrl, mode = 'full') {
-  // Inyectar content script (silencioso si ya está)
-  await chrome.scripting.executeScript({ target: { tabId }, files: ['content_capture.js'] })
-    .catch(() => {});
-  await sleep(80);
+  return runExclusiveCapture(async () => {
+    await chrome.scripting.executeScript({ target: { tabId }, files: ['content_capture.js'] })
+      .catch(() => {});
+    await sleep(80);
 
-  let dataUrl;
-  try {
-    if (mode === 'full') {
-      dataUrl = await captureFullPage(tabId, windowId);
-    } else {
-      dataUrl = await chrome.tabs.captureVisibleTab(windowId, { format: 'png' });
+    let dataUrl;
+    try {
+      if (mode === 'full') {
+        dataUrl = await captureFullPage(tabId, windowId);
+      } else {
+        dataUrl = await chrome.tabs.captureVisibleTab(windowId, { format: 'png' });
+      }
+    } catch (err) {
+      await sendToTab(tabId, { action: 'hideProgress' }).catch(() => {});
+      throw err;
     }
-  } catch (err) {
-    // Ocultar overlay si quedó visible
-    await sendToTab(tabId, { action: 'hideProgress' }).catch(() => {});
-    throw err;
-  }
 
-  dataUrl = await applyCaptureTreatmentIfEnabled(dataUrl, pageUrl);
+    dataUrl = await applyCaptureTreatmentIfEnabled(dataUrl);
 
-  const filename = await generateFilename(pageUrl);
-  await chrome.downloads.download({
-    url: dataUrl,
-    filename: `screenshots/${filename}`,
-    saveAs: false,
-    conflictAction: 'uniquify'
+    const filename = await generateFilename(pageUrl);
+    await chrome.downloads.download({
+      url: dataUrl,
+      filename: `screenshots/${filename}`,
+      saveAs: false,
+      conflictAction: 'uniquify'
+    });
+    return { success: true, filename };
   });
-  return { success: true, filename };
 }
 
 // ─── Throttle para captureVisibleTab (límite Chrome: 2/seg) ──────────────────
@@ -259,7 +284,7 @@ function sleep(ms) {
   return new Promise(r => setTimeout(r, ms));
 }
 
-async function applyCaptureTreatmentIfEnabled(dataUrl, pageUrl) {
+async function applyCaptureTreatmentIfEnabled(dataUrl) {
   const {
     imageTreatmentEnabled = false,
     imageBorderColor = '#000000',
@@ -380,14 +405,6 @@ function normalizeUrlForTramiteMatch(urlString) {
   }
 }
 
-function findTramiteForUrl(pageUrl, tramites) {
-  if (!Array.isArray(tramites) || !pageUrl) return null;
-
-  // Coincidencia por "path" únicamente (sin dominio).
-  const key = normalizeUrlForTramiteMatch(pageUrl);
-  return tramites.find((t) => normalizeUrlForTramiteMatch(t.URL) === key) || null;
-}
-
 async function generateFilename(pageUrl) {
   const key   = urlToStorageKey(pageUrl);
   const data  = await chrome.storage.local.get(key);
@@ -412,7 +429,11 @@ async function generateFilename(pageUrl) {
     // Si falla la carga del JSON, seguimos con el naming tradicional.
   }
 
-  return `${folderPath}${filenamePrefix}_${String(count).padStart(3,'0')}.png`;
+  const suffix = `_${String(count).padStart(3, '0')}.png`;
+  if (filenamePrefix) {
+    return `${folderPath}${filenamePrefix}${suffix}`;
+  }
+  return `${folderPath}${urlToReadableName(pageUrl)}${suffix}`;
 }
 
 function urlToReadableName(url) {
